@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light"/>
+<title>决战小众之巅 · v1.2 提名指数与有品反馈</title>
+<style>
+:root{--paper:#f8f8f4;--panel:#fff;--ink:#191d18;--gray:#7c8176;--line:#e4e8df;--green:#bdec78;--subgreen:#eaf7d5;--deep:#344126;--r:15px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);font-family:Inter,-apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC','Microsoft YaHei',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,input:focus-visible{outline:2px solid #839f52;outline-offset:2px}.app{width:min(100%,650px);min-height:100dvh;margin:auto;display:flex;flex-direction:column;background:var(--panel);box-shadow:0 0 35px #212d1b0a}.bar{height:64px;border-bottom:1px solid var(--line);padding:0 25px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-shrink:0}.logo{font-size:14px;font-weight:900;letter-spacing:-.7px}.small{color:var(--gray);font-size:11px}.bar-right{font-size:11px;color:var(--gray);display:flex;align-items:center;gap:6px}.dot{width:7px;height:7px;border-radius:50%;background:#8ea866}.main{padding:29px 27px 38px;flex:1}.eyebrow{font-size:11px;color:#8b9185;letter-spacing:1.5px;font-weight:700;text-transform:uppercase}.h1{font-size:clamp(35px,7vw,54px);letter-spacing:-2.6px;line-height:1.14;margin:13px 0 14px;font-weight:900}.h2{font-size:clamp(26px,6.3vw,37px);letter-spacing:-1.3px;line-height:1.25;margin:10px 0 13px;font-weight:870}.lead{font-size:13px;color:var(--gray);line-height:1.8;margin:0 0 23px}.faint{color:var(--gray)}.space{height:18px}.space-lg{height:35px}.hr{height:1px;background:var(--line);margin:24px 0}.btn{border:0;background:var(--ink);color:#fff;min-height:49px;padding:13px 19px;border-radius:13px;font-size:14px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{background:#333b2d}.btn.ghost{background:#f0f2ed;color:var(--ink)}.btn.ghost:hover{background:#e7eee0}.btn.outline{border:1px solid #dfe4d9;background:#fff;color:var(--ink)}.btn.green{background:var(--green);color:#243717}.btn.green:hover{background:#c7f692}.btn.block{width:100%}.buttons{display:flex;gap:10px;flex-wrap:wrap}.buttons .btn{flex:1}.rank-box{border:1px solid var(--line);border-radius:18px;padding:22px;margin:29px 0 23px;background:#fcfcf8}.rhead{display:flex;justify-content:space-between;gap:12px;align-items:center}.rank-num{font-size:48px;font-weight:900;letter-spacing:-2.5px;line-height:1}.rank-name{font-size:12px;font-weight:730;color:#55664b}.meter{height:5px;border-radius:100px;background:#e9ede4;overflow:hidden;margin-top:19px}.meter-inner{height:100%;background:#9ac35f;border-radius:100px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.mini-badge{border:1px solid #dae0d2;border-radius:999px;color:#697562;padding:6px 10px;font-size:10px;font-weight:700}.groups{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0 23px}.chip{background:#f5f6f3;border:1px solid #e6e9e1;color:#373b32;border-radius:100px;font-size:13px;padding:10px 14px;font-weight:650;line-height:1.25}.chip.active{background:var(--green);border-color:#a3d067;color:#253418}.section{font-size:13px;font-weight:850;margin:23px 0 11px}.category{font-size:10px;letter-spacing:1px;color:#9ba094;font-weight:800;margin:19px 0 9px}.opponent{border:1px solid var(--line);padding:20px;border-radius:18px;margin:19px 0 20px}.face{width:47px;height:47px;display:grid;place-items:center;border-radius:50%;background:#e8eadf;font-size:20px;font-weight:800;flex-shrink:0}.op-name{font-size:18px;font-weight:840;margin-bottom:3px}.history{padding:11px 13px;background:#f4f5ef;border-radius:11px;margin-top:15px;color:#60695a;font-size:12px;line-height:1.7}.track{display:flex;gap:7px;margin:20px 0 29px}.barline{flex:1;height:5px;border-radius:10px;background:#edf0ea}.barline.done{background:#b4d98d}.barline.current{background:#647f42}.chat{display:flex;flex-direction:column;gap:16px;margin:23px 0 26px;min-height:135px}.message{display:flex;flex-direction:column;align-items:flex-start;max-width:90%;gap:5px}.message.me{align-self:flex-end;align-items:flex-end}.who{font-size:10px;color:#949991;padding:0 5px}.bubble{font-size:15px;line-height:1.6;background:#f1f2ed;border-radius:16px 16px 16px 4px;padding:12px 16px;overflow-wrap:anywhere}.me .bubble{background:var(--subgreen);border-radius:16px 16px 4px 16px}.choice{border:1px solid var(--line);width:100%;border-radius:13px;padding:17px 15px;background:#fff;text-align:left;font-size:14px;font-weight:750;display:flex;align-items:center;justify-content:space-between}.choice:hover{background:#f5f8ef}.choice:not(:last-child){margin-bottom:10px}.form-row{margin:16px 0}.form-row label{font-size:12px;font-weight:800;display:block;margin:0 0 8px}.field{width:100%;padding:14px 15px;font-size:14px;background:#fff;color:var(--ink);border:1.3px solid #dfe4d8;border-radius:12px;min-height:49px}.field::placeholder{color:#adb3a6}.assist{font-size:11px;color:#8a9383;line-height:1.6;margin:9px 0}.suggestions{border:1px solid var(--line);border-radius:12px;max-height:200px;overflow:auto;margin:7px 0;background:#fff}.suggestion{display:flex;align-items:center;justify-content:space-between;gap:10px;border:0;border-bottom:1px solid #f0f0eb;width:100%;text-align:left;background:white;padding:12px;font-size:13px}.suggestion:hover{background:#f4f6f0}.suggestion:last-child{border-bottom:0}.suggestion small{font-size:10px;color:var(--gray)}.smalllink{background:none;border:0;color:#647d4c;text-decoration:underline;text-underline-offset:3px;font-size:11px;padding:7px 0}.note{border-radius:13px;background:#f5f6f1;padding:14px 16px;line-height:1.7;font-size:12px;color:#5d6857}.note strong{color:#2f3c29}.status{border-radius:17px;padding:18px;background:#f3f6ee;margin:19px 0}.status h3{font-size:17px;letter-spacing:-.5px;margin:0 0 8px}.status p{font-size:12px;line-height:1.7;color:#697263;margin:0}.status.win{background:#ecf8db}.status.loss{background:#f9f0ec}.status.pending{background:#f3f3f1}.statline{padding:15px 0;border-bottom:1px solid var(--line);font-size:13px}.statline:last-child{border-bottom:0}.statline strong{display:block;margin:6px 0 4px}.big-status{font-size:clamp(33px,8vw,53px);letter-spacing:-1.8px;font-weight:900;line-height:1.15;margin:13px 0}.big-status.win{color:#527b31}.big-status.loss{color:#a86d59}.round-kicker{font-size:12px;color:#808b78;font-weight:750}.score-inline{font-weight:840;font-size:15px}.final-rank{padding:20px;border:1px solid var(--line);border-radius:15px;margin:22px 0}.delta{font-size:16px;font-weight:850}.delta.up{color:#547b31}.delta.down{color:#aa6a53}.foot{border-top:1px solid var(--line);font-size:10px;line-height:1.6;color:#a0a699;padding:14px 27px}.err{color:#ba685d;font-size:12px;line-height:1.5;margin:11px 0}.loading{color:#718167;font-size:11px}.copyline{font-size:11px;color:#627955;margin-top:10px}.divider-word{font-size:10px;color:#a5ab9e;letter-spacing:1px;text-align:center;margin:10px 0}.tag{display:inline-block;background:#ecf1e6;border-radius:6px;padding:3px 7px;font-size:10px;font-weight:800;color:#64775a}.surprise{font-size:18px;font-weight:850;line-height:1.4;margin-bottom:7px}.gesture{font-size:11px;color:#7a8374}.mono{font-variant-numeric:tabular-nums}
+@media(max-width:520px){.bar{height:60px;padding:0 17px}.main{padding:25px 18px 28px}.h1{font-size:46px}.rank-num{font-size:45px}.rank-box{padding:18px;margin:23px 0}.bubble{font-size:14px}.foot{padding:13px 18px}.button,.btn{min-width:0}.buttons{flex-direction:column}.opponent{padding:17px}}
+@media(prefers-reduced-motion:no-preference){.message{animation:appear .2s ease-out}@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}}
+
+/* v0.6 — 无人物插画的平面视觉系统 + 情绪化按钮 */
+:root{--paper:#f8f7f0;--panel:#fffdf7;--ink:#20211b;--gray:#77786d;--line:#e6e4d8;--green:#d4ff46;--subgreen:#edffbf;--deep:#262e12;--r:18px}
+body{background:#e8e8df;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.app{width:min(100%,580px);background:var(--panel);box-shadow:0 0 90px #10150710}
+.bar{height:66px;border-bottom:1px solid #e8e6d9;padding:0 23px}.logo{font-weight:960;font-size:16px;letter-spacing:-.85px}.bar-right{font-size:10px}.dot{background:#b0d638}
+.main{padding:30px 25px 42px}.eyebrow{color:#777c6d;font-size:11px;font-weight:800;letter-spacing:1.35px}
+.h1{font-size:clamp(47px,10vw,73px);letter-spacing:-4px;line-height:1.13;margin:14px 0 17px}.h2{font-size:clamp(34px,8vw,49px);line-height:1.17;letter-spacing:-2.2px;margin:13px 0 18px}
+.lead{font-size:13px;line-height:1.8;color:#77776e}.rank-box{background:#f1f0e8;border:0;border-radius:19px;padding:23px 23px 20px}.rank-num{font-size:56px}.rank-name{color:#686c56}
+.meter{height:7px;background:#deded4;margin-top:22px}.meter-inner{background:#c7ee49}
+.category{letter-spacing:.7px;margin-top:22px}.groups{gap:9px!important;margin-bottom:4px!important}.chip{background:#f3f1e9;border:1px solid #e3e0d6;font-size:12px;padding:10px 14px;transition:background .15s ease, transform .18s ease,box-shadow .18s ease}
+.chip.active{background:#d4ff46;border-color:#9baa55;box-shadow:0 3px 0 #485127;transform:translateY(-2px)}
+.btn{border:1.7px solid #242620;min-height:53px;border-radius:999px;padding:14px 20px;background:#242620;box-shadow:0 4px 0 #161814;font-size:14px;font-weight:900;transition:transform .16s cubic-bezier(.2,1.4,.6,1),box-shadow .16s,filter .2s,background .18s;touch-action:manipulation;position:relative}
+.btn:hover{background:#35382f;filter:brightness(1.02)}
+.btn:active{transform:translateY(4px) scale(.988);box-shadow:0 0 0 #1e2311}
+.btn.green{background:var(--green);color:#161911;border-color:#20221b;box-shadow:0 5px 0 #343a20}
+.btn.green:hover{background:#ddff6e}
+.btn.ghost,.btn.outline{background:#fffdf7;color:#25271e;border:1.5px solid #a9aaa0;box-shadow:0 3px 0 #c9c8bd}
+.btn.ghost:hover,.btn.outline:hover{background:#f4f2ea}
+.btn.ghost:active,.btn.outline:active{box-shadow:0 0 0 #c9c8bd}
+.btn.big-game{min-height:65px;font-size:16px;letter-spacing:.25px}
+.btn.emote-yes,.btn.emote-no{width:100%;height:104px;text-align:left;justify-content:space-between;font-size:clamp(27px,6vw,38px);font-weight:950;letter-spacing:-1.2px;border-radius:24px;padding:20px 23px;line-height:1.05}
+.btn.emote-yes{background:var(--green);color:#1d2412;border:2px solid #222720;box-shadow:0 7px 0 #323c20;transform:translateY(0)}
+.btn.emote-no{background:#eeece7;color:#65625e;border:2px solid #bab9b2;box-shadow:0 5px 0 #b9b7b1}
+.emote-mark{font-size:12px;font-weight:900;letter-spacing:1px;opacity:.75}
+.emotion-choices{display:grid;grid-template-columns:1fr;gap:18px;margin-top:27px}
+.btn.emote-yes.is-playing{animation:yesJump .55s cubic-bezier(.2,.7,.2,1) both}
+.btn.emote-no.is-playing{animation:noSink .55s cubic-bezier(.25,.6,.25,1) both}
+@keyframes yesJump{0%{transform:translateY(0) scale(1);box-shadow:0 7px 0 #323c20}27%{transform:translateY(-12px) scale(1.045) rotate(-1.5deg);box-shadow:0 15px 0 #323c20,0 0 35px #ceff6c85}62%{transform:translateY(1px) scale(.988) rotate(1deg);box-shadow:0 3px 0 #323c20}100%{transform:translateY(0) scale(1);box-shadow:0 7px 0 #323c20}}
+@keyframes noSink{0%{transform:translateY(0) scale(1);filter:grayscale(0)}35%{transform:translateY(5px) scale(.975,.91);box-shadow:0 0 0 #b9b7b1;filter:grayscale(.25)}68%{transform:translateY(1px) scale(1.01,.99);box-shadow:0 3px 0 #b9b7b1}100%{transform:translateY(0) scale(1);box-shadow:0 5px 0 #b9b7b1}}
+.btn.green.big-game:not(:disabled):active{animation:startPop .34s ease}
+@keyframes startPop{50%{transform:translateY(4px) scale(.96);box-shadow:0 1px 0 #343a20}}
+.voice-circle{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1.5px solid currentColor;border-radius:50%;font-size:18px;flex-shrink:0}
+.vinyl{width:82px;height:82px;border-radius:50%;background:repeating-radial-gradient(circle at center,#242721 0 3px,#343730 4px 5px,#22251f 6px 8px);display:grid;place-items:center;box-shadow:7px 9px 0 #dbdace;transform:rotate(-10deg)}
+.vinyl::before{content:'';width:32px;height:32px;border-radius:50%;background:var(--green);border:6px solid #20241f;box-shadow:inset 0 0 0 5px #d4ff46}
+.hero{margin:18px 0 29px;padding:23px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.hero-title{font-size:clamp(36px,8vw,59px);font-weight:950;line-height:1.14;letter-spacing:-2.6px}
+.hero-title .hl{background:linear-gradient(transparent 61%,#d4ff46 61%)}
+.hero-lead{font-size:12px;color:#747569;margin-top:17px}
+.rank-box .rhead{align-items:center}.mini-badge{border-color:#d8d6c8}.opponent{background:#f8f7f1;border:1px solid var(--line);border-radius:22px;padding:21px}
+.face{border-radius:15px;background:#d4ff46;color:#20241a;font-size:21px;transform:rotate(-5deg)}
+.history{background:#eeede6;border-radius:13px}
+.chat{margin:26px 0 29px;gap:19px}.message{max-width:91%}.who{font-size:10px}.bubble{border:1.5px solid #d6d5ca;background:#f2f1e9;border-radius:22px 22px 22px 5px;font-size:17px;line-height:1.65;padding:15px 18px}
+.me .bubble{border-color:#c1d989;background:#edffce;border-radius:22px 22px 5px 22px}
+.track{margin:21px 0 30px}.barline{height:7px;background:#ebe9de}.barline.done{background:#cbf36d}.barline.current{background:#333b23}
+.field{min-height:56px;background:#fffef9;border:1.5px solid #d5d5c9;border-radius:14px;font-size:15px}.field:focus{outline:none;border-color:#98b63e;box-shadow:0 0 0 3px #d4ff4670}
+.form-row label{font-size:13px;margin-bottom:11px}.suggestions{margin:7px 0 0;max-height:284px;border:1px solid #dfded2;box-shadow:0 12px 24px #23281b12;overflow-y:auto}.suggestion{font-size:14px;padding:14px 12px}.suggestion:hover{background:#f2f9dd}.suggestion small{max-width:56%;text-align:right;line-height:1.3}
+.suggest-remote-badge{display:inline-block;font-size:10px;color:#5f7946;background:#eaffc6;border-radius:4px;padding:3px 6px;white-space:nowrap}
+.search-status{font-size:11px;color:#777b70;display:flex;justify-content:space-between;align-items:center;gap:10px;margin:9px 0}
+.note,.status,.final-rank{border:1px solid #e7e4d7;background:#f8f7f1;border-radius:20px;padding:20px}
+.status.win{background:#f1ffcf}.status.loss{background:#f7f2ec}
+.big-status{letter-spacing:-2px}.big-status.win{color:#3d571b}.big-status.loss{color:#7b705f}
+.delta.up{color:#4f711e}.delta.down{color:#777166}.tag{background:#eaf8c8}.foot{background:#f9f7f0;border-top:1px solid #e9e6da}
+.summary-strap{font-size:12px;background:#eefecc;padding:11px 16px;border-radius:100px;display:inline-flex;gap:8px;align-items:center;margin-bottom:12px}
+@media(max-width:520px){.main{padding:24px 19px 36px}.bar{height:60px;padding:0 18px}.logo{font-size:14px}.rank-box{padding:20px}.hero{margin:8px 0 22px}.vinyl{width:69px;height:69px;flex-shrink:0}.hero-title{font-size:42px}.btn.emote-yes,.btn.emote-no{height:97px}.emotion-choices{gap:16px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* v0.9 情绪聊天：轻度表情、隐形安利凭据，保持无卡通图的极简界面 */
+.message.feels .bubble{font-weight:660;letter-spacing:-.15px;box-shadow:0 2px 0 rgba(30,43,14,.04)}
+.message.feels.me .bubble{background:#e3ff9e}
+.message.feels:not(.me) .bubble{border-left:3px solid #d0eb9c}
+.proof-card{border:1.5px solid #dedfcf;background:#fafbf3;padding:19px;border-radius:20px;margin:16px 0 18px}
+.proof-head{font-weight:900;font-size:18px;letter-spacing:-.4px;margin:0 0 8px}
+.proof-hint{font-size:12px;line-height:1.75;color:#777a6d;margin:4px 0 13px}
+.proof-label{font-size:11px;letter-spacing:.2px;color:#747d65;font-weight:750;display:flex;align-items:center;gap:7px;margin:6px 0 12px}
+.proof-label:before{content:'✓';background:#d4ff46;color:#24281a;font-size:10px;font-weight:900;width:16px;height:16px;border-radius:50%;display:inline-grid;place-items:center}
+.proof-foot{margin-top:10px;font-size:11px;color:#92978a;line-height:1.6}
+/* v1.0 supplementary components, entirely CSS and no illustrations */
+.mode-tabs{display:flex;gap:9px;margin:-9px 0 7px}
+.mode-tabs>.btn{flex:1;min-height:46px;font-size:13px}
+.mini-meta{color:#8b8d7c;font-size:11px;line-height:1.7;margin:8px 0 16px}
+.two-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.option-card{padding:18px 15px;border:1px solid #e2e3d9;border-radius:17px;background:#f9f9f3;display:flex;flex-direction:column;gap:8px}
+.option-card>strong{font-size:18px;letter-spacing:-.5px}.option-card>p{margin:0;flex:1;color:#757669;font-size:12px;line-height:1.7}
+.option-card .btn{font-size:12px;padding:10px;min-height:45px}
+.input-label{display:block;font-size:12px;font-weight:750;margin:0 0 9px}
+select.field{appearance:auto;background:#fff;cursor:pointer}
+.timer-row{display:flex;align-items:center;justify-content:space-between;background:#f4f5ee;border-radius:13px;padding:12px 15px;font-size:12px;color:#737b65}
+.timer-row strong{font-size:22px;color:#26351e;letter-spacing:.5px;font-weight:900}
+.timer-row strong.urgent{color:#cf5b39;animation:urgentPulse .85s infinite alternate}
+@keyframes urgentPulse{from{transform:scale(1)}to{transform:scale(1.08)}}
+.leader-row{display:flex;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
+.leader-place{width:31px;height:31px;border-radius:50%;background:#f0f0e8;display:grid;place-items:center;font-size:13px;font-weight:900;flex-shrink:0}
+.leader-row:nth-child(1) .leader-place{background:#d4ff46}
+.leader-name{flex:1;font-size:14px;font-weight:800}.leader-name>.small{margin-top:6px;font-weight:400}
+.history-row{border-bottom:1px solid var(--line);font-size:12px;line-height:1.6;padding:12px 0}
+.history-row:last-child{border-bottom:0}.history-row b{color:#546c39}
+#liveSuggestion{max-height:196px;overflow-y:auto;border-radius:10px;margin-top:8px}
+#liveSuggestion .suggestion{border-bottom:1px solid #e5e5dd}
+#liveSuggestion .suggestion:last-child{border-bottom:0}
+.btn.ghost{box-shadow:0 3px 0 #e0e1d9;border-color:#e1e4d8}
+.btn.outline{box-shadow:0 3px 0 #d6d9cd}
+.btn.big-game{letter-spacing:.4px}
+#remoteLeaderboard .note{font-size:12px}
+@media(max-width:460px){.two-cards{grid-template-columns:1fr}.mode-tabs{flex-direction:row}.main{padding-left:19px;padding-right:19px}.option-card{min-height:115px}.h2{font-size:36px}}
+@media(prefers-reduced-motion:reduce){.timer-row strong.urgent{animation:none}}
+
+
+/* 单机 v1.0 补丁：时限只作提醒，不更改原有判定规则 */
+.solo-clock{margin:0 0 19px;animation:clockEnter .22s ease-out}
+.solo-clock .timer-row{background:#f4f5ed;border:1px solid #e7e8db}
+.solo-clock .mini-meta{margin:6px 2px 0;font-size:10px}
+.solo-clock.expired .timer-row{background:#faf0e8}
+.solo-clock.expired strong{font-size:16px;color:#a86b4d}
+.solo-song-help{font-size:11px;color:#858b7d;margin:8px 0 0;line-height:1.5}
+.solo-track-suggest{border:1px solid #e5e7d9;border-radius:13px;overflow:hidden;background:#fffefb;max-height:218px;overflow-y:auto;margin-top:8px;box-shadow:0 8px 20px #121b100c}
+.solo-track-suggest:empty{display:none}
+.solo-track-suggest .suggestion{display:block;width:100%;padding:13px 15px;line-height:1.5}
+.solo-track-suggest .suggestion small{margin-left:7px;opacity:.75}
+.solo-track-status{font-size:11px;color:#7b8574;line-height:1.5;min-height:16px;margin-top:6px}
+@keyframes clockEnter{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+
+/* 只负责输入补全，不改变游戏判定规则 */
+.solo-track-status{display:flex;align-items:center;min-height:18px}
+.solo-track-suggest .suggestion{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.solo-track-suggest .suggestion strong{font-weight:710;overflow-wrap:anywhere}
+.solo-track-suggest .suggestion small{text-align:right;font-weight:500;white-space:nowrap}
+.solo-search-tips{font-size:11px;line-height:1.6;color:#798270;padding:10px 0}
+
+/* v1.2: discreet engagement analytics and optional positive feedback */
+.index-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;margin:8px 0 17px;background:#fffdf7}.index-entry strong{font-size:13px}.index-entry .btn{min-height:40px;padding:9px 15px;font-size:12px}.index-list{padding:12px;background:#f7f6ef;border-radius:14px;font-size:13px}.index-line{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 4px;border-bottom:1px solid #e6e5d9;font-size:12px}.index-line:last-child{border:0}.index-line strong{font-size:13px}.index-line span{overflow-wrap:anywhere}.index-result{min-height:22px}.stat-quiet{padding:10px 2px;font-size:12px}.taste-share{background:#f5f6ee;border:1px solid #e9e9dd;border-radius:15px;padding:14px 15px;margin:-9px 0 18px;font-size:14px}.taste-share strong{display:block;margin:5px 0;overflow-wrap:anywhere}.taste-button{min-height:40px;font-size:12px;margin-top:11px;background:#edffbf;color:#283012;border:1px solid #a0c048;box-shadow:none}.taste-button:hover{background:#dfff9a}.taste-sent{margin-top:9px;font-size:12px;color:#617b39;font-weight:750}.mini-taste{border:1px solid #b3ca8a;background:#edffbf;color:#344523;font-size:11px;font-weight:750;border-radius:99px;padding:7px 12px;margin-top:9px}.history-row .small{margin-top:5px} 
+
+</style>
+</head>
+<body>
+<div id="root" class="app"></div>
+<script>
+(()=>{'use strict';
+const GENRES=[
+['华语流行','popcn','流行'],['欧美流行','popwest','流行'],['日韩流行','popasia','流行'],['City Pop','citypop','流行'],
+['独立摇滚','indie','独立 / 摇滚'],['Shoegaze','shoegaze','独立 / 摇滚'],['Slowcore','slowcore','独立 / 摇滚'],['Post-rock','postrock','独立 / 摇滚'],
+['地下说唱','underground','说唱'],['Cloud Rap','cloud','说唱'],['Ambient','ambient','电子 / 其他'],['IDM','idm','电子 / 其他'],['爵士','jazz','电子 / 其他'],['金属','metal','电子 / 其他'] ];
+// 本地音乐人+推荐曲目样本，都是玩法占位，不代表任何真实小众排行榜。
+const DB=[
+['王菲','popcn','红豆'],['周杰伦','popcn','七里香'],['陈绮贞','popcn','旅行的意义'],['孙燕姿','popcn','我怀念的'],['窦靖童','popcn','May Rain'],['许钧','popcn','自己'],['魏如萱','popcn','你啊你啊'],['张悬','popcn','宝贝'],
+['Taylor Swift','popwest','august'],['Lana Del Rey','popwest','Video Games'],['Billie Eilish','popwest','Happier Than Ever'],['Charli xcx','popwest','Track 10'],['FKA twigs','popwest','cellophane'],['Carly Rae Jepsen','popwest','Run Away with Me'],['Caroline Polachek','popwest','So Hot You’re Hurting My Feelings'],['Sufjan Stevens','popwest','Mystery of Love'],
+['NewJeans','popasia','Ditto'],['IU','popasia','밤편지'],['宇多田光','popasia','First Love'],['椎名林檎','popasia','丸ノ内サディスティック'],['藤井风','popasia','死ぬのがいいわ'],['羊文学','popasia','光るとき'],['HYUKOH','popasia','TOMBOY'],['Lamp','popasia','恋人へ'],
+['竹内玛莉亚','citypop','Plastic Love'],['山下达郎','citypop','Ride on Time'],['大贯妙子','citypop','4:00A.M.'],['杏里','citypop','Remember Summer Days'],['松原美纪','citypop','真夜中のドア'],['角松敏生','citypop','Sea Line'],['吉田美奈子','citypop','Midnight Driver'],['菊池桃子','citypop','Mystical Composer'],
+['Arctic Monkeys','indie','505'],['The Strokes','indie','Someday'],['Radiohead','indie','Weird Fishes/Arpeggi'],['The Smiths','indie','There Is a Light That Never Goes Out'],['The National','indie','Bloodbuzz Ohio'],['Alvvays','indie','Dreams Tonite'],['Yo La Tengo','indie','Autumn Sweater'],['Deerhunter','indie','Helicopter'],
+['My Bloody Valentine','shoegaze','Sometimes'],['Slowdive','shoegaze','Alison'],['Ride','shoegaze','Vapour Trail'],['Lovesliescrushing','shoegaze','Babysbreath'],['Bowery Electric','shoegaze','Fear of Flying'],['Sweet Trip','shoegaze','Dsco'],['Chapterhouse','shoegaze','Pearl'],['Astrobrite','shoegaze','Crasher'],
+['Duster','slowcore','Inside Out'],['Codeine','slowcore','D'],['Bedhead','slowcore','The Rest of the Day'],['Low','slowcore','Words'],['Carissa’s Wierd','slowcore','So You Wanna Be a Superhero'],['Bluetile Lounge','slowcore','Red Valentine'],['Idaho','slowcore','Skyscrape'],['Red House Painters','slowcore','Katy Song'],
+['Mogwai','postrock','Mogwai Fear Satan'],['Godspeed You! Black Emperor','postrock','Storm'],['Slint','postrock','Good Morning, Captain'],['MONO','postrock','Ashes in the Snow'],['Tortoise','postrock','Djed'],['Bark Psychosis','postrock','The Loom'],['Do Make Say Think','postrock','Fredericia'],['Explosions in the Sky','postrock','Your Hand in Mine'],
+['MF DOOM','underground','Rapp Snitch Knishes'],['billy woods','underground','Spongebob'],['Earl Sweatshirt','underground','Chum'],['clipping.','underground','Story 2'],['Armand Hammer','underground','Falling Out the Sky'],['Open Mike Eagle','underground','Dark Comedy Morning Show'],['Dälek','underground','Ever Somber'],['JPEGMafia','underground','1539 N. Calvert'],
+['Yung Lean','cloud','Ginseng Strip 2002'],['Bladee','cloud','Be Nice 2 Me'],['Ecco2k','cloud','Peroxide'],['Black Kray','cloud','Hydrocodone'],['Chris Travis','cloud','Crunch Time'],['Bones','cloud','Dirt'],['Thaiboy Digital','cloud','Diamonds'],['Lil B','cloud','I’m God'],
+['Brian Eno','ambient','1/1'],['Grouper','ambient','Heavy Water / I’d Rather Be Sleeping'],['Tim Hecker','ambient','Virginal II'],['Stars of the Lid','ambient','Requiem for Dying Mothers, Pt. 2'],['William Basinski','ambient','dlp 1.1'],['Biosphere','ambient','Poa Alpina'],['Loscil','ambient','Endless Falls'],['Hiroshi Yoshimura','ambient','Green'],
+['Aphex Twin','idm','Xtal'],['Boards of Canada','idm','Roygbiv'],['Autechre','idm','Gantz Graf'],['Squarepusher','idm','My Red Hot Car'],['µ-Ziq','idm','Hasty Boom Alert'],['Plaid','idm','Eyen'],['Bola','idm','Vertiphon'],['Telefon Tel Aviv','idm','Fahrenheit Fair Enough'],
+['Miles Davis','jazz','So What'],['John Coltrane','jazz','Naima'],['Bill Evans','jazz','Waltz for Debby'],['Sun Ra','jazz','Space Is the Place'],['Pharoah Sanders','jazz','The Creator Has a Master Plan'],['Ornette Coleman','jazz','Lonely Woman'],['Alice Coltrane','jazz','Journey in Satchidananda'],['Albert Ayler','jazz','Ghosts'],
+['田馥甄','popcn','你就不要想起我'],['五月天','popcn','倔强'],['蔡依林','popcn','日不落'],['张惠妹','popcn','听海'],['林俊杰','popcn','江南'],['林宥嘉','popcn','说谎'],['李荣浩','popcn','李白'],['椅子乐团','indie','Maybe Maybe'],['Fishmans','popasia','Long Season'],['Have a Nice Life','indie','Bloodhail'],['Phoebe Bridgers','indie','Motion Sickness'],['Mitski','indie','Nobody'],['Beach House','indie','Space Song'],['椅子乐团 The Chairs','indie','Maybe Maybe'],
+['Metallica','metal','One'],['Black Sabbath','metal','War Pigs'],['Deftones','metal','Be Quiet and Drive (Far Away)'],['Sunn O)))','metal','It Took the Night to Believe'],['Boris','metal','Farewell'],['Sleep','metal','Dragonaut'],['Electric Wizard','metal','Funeralopolis'],['Agalloch','metal','In the Shadow of Our Pale Companion']
+].map(([name,genre,track])=>({name,genre,track,source:'sample'}));
+const root=document.getElementById('root');
+const STORAGE='niche_music_rank_v05';const CUSTOM='niche_music_custom_v05';
+const norm=s=>(s||'').normalize('NFKC').replace(/[^\p{L}\p{N}]+/gu,'').toLocaleLowerCase();
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeJson=(key,fallback)=>{try{let v=JSON.parse(localStorage.getItem(key));return v??fallback}catch(e){return fallback}};
+const profile=safeJson(STORAGE,{rp:1000,played:0,wins:0,history:[]});if(!Number.isFinite(profile.rp))profile.rp=1000;
+let customs=safeJson(CUSTOM,[]);if(!Array.isArray(customs))customs=[];
+let S={view:'home',genre:null,opponent:null,round:0,results:[],usedMine:[],usedOther:[],incoming:null,incomingHeard:null,incomingProof:'',incomingReply:'',dialogue:null,nom:null,nomDraft:{artist:'',track:'',picked:null,remote:[],loading:false,msg:'',query:''},reaction:null,error:'',rankBefore:profile.rp,rankDelta:0,finalOutcome:null,ended:false,opponentRotation:0};
+function save(){try{localStorage.setItem(STORAGE,JSON.stringify(profile));localStorage.setItem(CUSTOM,JSON.stringify(customs.slice(-250)))}catch(e){}}
+function rankName(r){return r<900?'路过听众':r<1100?'泛听选手':r<1300?'圈内同好':r<1500?'地下挖掘者':'小众之巅'}
+function genreName(id){return GENRES.find(g=>g[1]===id)?.[0]||id}
+function byGenre(id){return DB.filter(x=>x.genre===id)}
+function bar(extra=''){return `<header class="bar"><div class="logo">决战小众之巅 <span style="font-weight:650;color:#b0ae9f">/ 10</span></div><div class="bar-right"><span class="dot"></span>${esc(extra||'音乐排位 · v1.0')}</div></header>`}
+function foot(){return `<div class="foot">v0.9 · 对话式推荐 · MusicBrainz 搜索（可用时） · 模拟对手与试玩排位 · 输入作品尚未自动验真</div>`}
+function shell(body,extra=''){root.innerHTML=bar(extra)+`<main class="main">${body}</main>`+foot()}
+function button(label,action,style=''){return `<button type="button" class="btn ${style}" data-act="${action}">${label}</button>`}
+function renderHome(){S.view='home';let groups=[...new Set(GENRES.map(x=>x[2]))];let p=profile.rp;
+ shell(`<div class="eyebrow">MUSIC RANKED · V1.0</div><div class="hero"><div><div class="hero-title">你有<span class="hl">听过</span><br>TA 吗？</div><div class="hero-lead">以安利为名的音乐排位赛。</div></div><div class="vinyl" aria-hidden="true"></div></div>
+ <section class="rank-box"><div class="rhead"><div><div class="small" style="margin-bottom:9px">我的试玩战力</div><div class="rank-num mono">${Math.round(p)}</div></div><div style="text-align:right"><div class="rank-name">${rankName(p)}</div><div class="small" style="margin-top:8px">${profile.played} 场 · ${profile.wins} 胜</div></div></div><div class="meter"><div class="meter-inner" style="width:${Math.max(5,Math.min(100,((p%200)/200)*100))}%"></div></div></section>
+ <div class="row"><strong style="font-size:15px">选一个赛道</strong><span class="small">匹配相同流派的对手</span></div>
+ ${groups.map(g=>`<div class="category">${esc(g)}</div><div class="groups" style="margin:0">${GENRES.filter(x=>x[2]===g).map(x=>`<button type="button" class="chip ${S.genre===x[1]?'active':''}" data-genre="${esc(x[1])}">${esc(x[0])}</button>`).join('')}</div>`).join('')}
+ <div class="space-lg"></div>${button('开始排位 ↗','start','green block big-game')}
+ <div class="row" style="margin-top:13px"><span class="small">三轮对话 · 作品不设分数</span><button class="smalllink" data-act="reset">重置试玩战力</button></div>`);
+}
+function profileFor(genre,rotation){const pool=byGenre(genre);const idx=rotation%3;const patterns=[{name:'唱片柜管理员',avatar:'A',rp:970,bio:'更喜欢流派的代表作品',known:[0,1,2,3,4],history:[pool[0],pool[1]],order:[0,2,5]},{name:'夜间收听者',avatar:'B',rp:1020,bio:'听得挺杂，但有自己的盲区',known:[0,1,3,4,6],history:[pool[1],pool[3]],order:[1,4,6]},{name:'地下室常客',avatar:'C',rp:1080,bio:'经常挖掘边缘作品',known:[0,1,2,3,4,5,6],history:[pool[3],pool[5]],order:[2,5,7]}];const o=patterns[idx];return {...o,history:o.history.filter(Boolean),knownNames:new Set(o.known.map(i=>norm(pool[i]?.name)).filter(Boolean)),incoming:o.order.map(i=>pool[i]).filter(Boolean),genre};}
+function renderMatch(){S.view='match';const o=S.opponent;shell(`<div class="eyebrow">正在匹配 · ${esc(genreName(S.genre))}</div><h2 class="h2">遇到一个<br>听同类音乐的人。</h2><section class="opponent"><div class="row" style="justify-content:flex-start"><div class="face">${esc(o.avatar)}</div><div><div class="op-name">${esc(o.name)}</div><div class="small">模拟对手 · 试玩战力 ${o.rp}</div></div></div><div class="history"><div style="font-weight:800;color:#4c5b42;margin-bottom:5px">TA 最近安利过</div>${o.history.map(x=>esc(x.name)).join(' · ')}</div></section><p class="lead">看过 TA 的歌单了吗？轮到你接招。</p><div class="buttons">${button('换个对手','reroll','ghost')}${button('开聊 →','nextincoming','green')}</div><div class="space"></div><div class="small">无人在线时的演示匹配，非真实玩家。</div>`,genreName(S.genre))}
+function progress(){return `<div class="row"><span class="round-kicker">${esc(genreName(S.genre))} · ROUND ${S.round+1}/3</span><span class="small">${esc(S.opponent.name)}</span></div><div class="track">${[0,1,2].map(i=>`<div class="barline ${i<S.round?'done':i===S.round?'current':''}"></div>`).join('')}</div>`}
+function talk(who,text,side,tone=''){return `<div class="message ${side==='me'?'me':''} ${tone?'feels':''}"><div class="who">${esc(who)}</div><div class="bubble">${esc(text)}</div></div>`}
+// 每次进入分支只抽取一次，避免重新渲染时聊天内容跳变；文案与胜负判定互不干扰。
+const LINES={
+ heardPraise:[
+  '哦？原来你也听这位，握手握手 (´▽｀)ﾉ',
+  '哎哟，巧了呀，看来是自己人。',
+  '哦哦哦，你也听！这下真的聊对人了。',
+  '原来能在这儿碰到同好，互联网真小。',
+  '幸会幸会，这个歌单有点对味了 ( ˘ω˘ )',
+  '哦～原来你也喜欢，那真不错。',
+  '懂了懂了，今天这趟没有白聊（笑）。',
+  '啊，那我们听歌的交集还挺妙的。',
+  '你也听这个呀？那必须握个手。',
+  '欸，好巧！感觉可以交换歌单了。',
+  '哇，难得在这儿聊到这位，开心。',
+  '嗯嗯，听到同好总是很有安全感 (｡•̀ᴗ-)✧'
+ ],
+ theirPitch:[
+  '哦，那正好～有空可以听听《{track}》。',
+  '这位不一定常遇到啦，先推荐你《{track}》。',
+  '嗯嗯，我私心推荐《{track}》，希望合你胃口。',
+  '那我把《{track}》轻轻放进你的待听清单 (´▽｀)',
+  '可以从《{track}》听起，我还蛮喜欢的。',
+  '那你先收下《{track}》，不急着交作业哈哈。',
+  '没关系，这个名字漏掉也正常。推荐《{track}》。',
+  '噢，那就分享一首《{track}》，听完有空交流～',
+  '这样，我推荐《{track}》，你随缘听听看。',
+  '那正好安利一下，《{track}》真的挺好听的。'
+ ],
+ myAcceptance:[
+  '好哦好哦，已经默默记下 (｀・ω・´)',
+  '好的老师，回头去补课（笑）。',
+  '嗯嗯，这个我收下了，歌单又变长了。',
+  '好诶，那我有空去听听！',
+  '收到收到，今晚耳朵有安排了。',
+  '谢谢安利！已经记到备忘录里了。',
+  '好的好的，我找个时间认真听。',
+  '谢谢带路 ( ˘ω˘ )',
+  '先收藏一个，回头向你汇报听感～',
+  '好耶，待听名单又添一位。'
+ ],
+ theirUnknown:[
+  '噢，这位我还真没接触过，求带路。',
+  '这题我还没复习到（笑），从哪首开始？',
+  '咦，这个名字是第一次听见。可以推荐一首吗？',
+  '好哦，我的知识盲区终于被照到了。',
+  '这位我不熟，你最推荐哪首？',
+  '哦～那正好请你安利一下 ( ´ ▽ ` )',
+  '我先把小本本拿出来，推荐从哪里听起？',
+  '噢，最近果然还有很多值得补的歌。',
+  '这个还没听过呢，愿闻其详。',
+  '哦哦，来活了，想听你的推荐。'
+ ],
+ theirHeard:[
+  '有听过呀，你也喜欢？',
+  '诶，巧了，这位我也有在听 (´▽｀)',
+  '哦哦哦，原来你也听这位。',
+  '嗯嗯，这位我挺熟的。',
+  '这位我听过～还蛮喜欢的。',
+  '好巧，这个名字居然在这里碰上了。',
+  '听过呀，我们的歌单有点交集哈哈。',
+  '哦，这位有在我的播放列表里。',
+  '嗯嗯，看来这题我们都会。',
+  '哈哈，看来找到了同温层。'
+ ],
+ myHeardReply:[
+  '原来你也听！那就不用多介绍啦 (´▽｀)',
+  '哦～那就挺巧的，下次交换歌单。',
+  '哈哈，这下有共同话题了。',
+  '懂了，看来我们平时没少走同一条路。',
+  '欸，好耶，遇到同好了。',
+  '嗯嗯，你听这位的话我大概懂你歌单风格了（笑）。',
+  '那挺好呀，有空可以聊聊喜欢的专辑。',
+  '哦哦，好，握个手 ( ´ ▽ ` )ﾉ',
+  '那就把这位留给同好之间慢慢聊～',
+  '咱们听歌方向有点重叠，蛮开心的。'
+ ],
+ theirHeardFollow:[
+  '好呀，下次交换歌单。',
+  '嗯嗯，这种巧合还蛮开心的。',
+  '我也是这么想的～',
+  '有机会再一起聊聊 (´▽｀)',
+  '哈哈，这样聊天就有意思了。',
+  '好诶，那以后推荐应该不愁了。',
+  '是的，今天认识一位同好。',
+  '收到，歌单交流计划已加入日程（笑）。'
+ ],
+ myPitch:[
+  '哦，那我推荐你先听《{track}》～',
+  '这位可能没那么常见，推荐《{track}》。',
+  '嗯嗯，我私心很喜欢《{track}》，分享给你。',
+  '没事没事，这位可以慢慢听。先从《{track}》开始。',
+  '那我把《{track}》放进你的待听清单啦 (´▽｀)',
+  '不急着听完哈哈，先推荐《{track}》。',
+  '你可以试试《{track}》，听完我们再交流～',
+  '哦好，那我认真安利一首：《{track}》。',
+  '我觉得《{track}》还挺适合作为第一首的。',
+  '正好有首很想分享的，《{track}》。'
+ ],
+ theirAcceptance:[
+  '好哦好哦，我记下来啦。',
+  '收到，加入待听！(ง •̀_•́)ง',
+  '好耶，今晚耳朵有安排了。',
+  '嗯嗯，谢谢安利，回头去听。',
+  '好的好的，收藏了！',
+  '谢谢老师带路（笑）。',
+  '噢，听起来蛮有意思，我去找找。',
+  '可以！先把这首收下。',
+  '好的，期待一个新发现 (´▽｀)',
+  '下次见面可以交换听后感了～'
+ ]
+};
+function pickLine(key,track=''){const arr=LINES[key];return arr[Math.floor(Math.random()*arr.length)].replaceAll('{track}',track)}
+function incomingChat(){const d=S.dialogue;let history=talk(S.opponent.name,`你有听过 ${S.incoming.name} 吗？`)+talk('你',S.incomingHeard?'听过！！':'没听过…','me');
+ history+=talk(S.opponent.name,d.incomingAnswer,'',true);
+ if(!S.incomingHeard)history+=talk('你',d.incomingAfter,'me',true);
+ return history}
+
+function nextIncoming(){S.incoming=S.opponent.incoming[S.round]||byGenre(S.genre)[S.round];S.incomingHeard=null;S.incomingProof='';S.incomingReply='';S.dialogue=null;S.nom=null;S.reaction=null;S.error='';S.nomDraft={artist:'',track:'',picked:null,remote:[],loading:false,msg:'',query:''};renderIncoming()}
+function renderIncoming(){S.view='incoming';shell(progress()+`<div class="eyebrow">对面先开口了</div><div class="chat">${talk(S.opponent.name,`你有听过 ${S.incoming.name} 吗？`)}</div><div class="emotion-choices"><button type="button" class="btn emote-yes" data-act="hearYes"><span>听过！！</span><span class="emote-mark">迫不及待 ↗</span></button><button type="button" class="btn emote-no" data-act="hearNo"><span>没听过…</span><span class="emote-mark">被安利了 ↓</span></button></div>`,genreName(S.genre))}
+function renderIncomingProof(){S.view='incomingProof';
+ shell(progress()+`<div class="eyebrow">你们听过同一位音乐人</div><div class="chat">${talk(S.opponent.name,`你有听过 ${S.incoming.name} 吗？`)}${talk('你','听过！！','me')}</div>
+ <section class="proof-card"><h3 class="proof-head">那你最推荐 TA 的哪首？</h3><p class="proof-hint">悄悄递上一首歌曲 / 专辑作为熟悉度凭据。对话中不公开歌名。</p><input id="heardProof" class="field" type="text" maxlength="120" autocomplete="off" placeholder="输入歌曲 / 专辑名" value="${esc(S.incomingProof)}"/><p class="proof-foot">本版仅记录你的推荐，尚未验证歌曲归属。</p></section>
+ <div id="proofError">${S.error?`<p class="err">${esc(S.error)}</p>`:''}</div>${button('递交这首 ↗','submitProof','green block big-game')}`,genreName(S.genre));}
+function submitProof(){const track=S.incomingProof.trim();if(!track){S.error='还差一首具体的歌曲或专辑～';renderIncomingProof();return}if(norm(track)===norm(S.incoming.name)){S.error='这里需要填一首歌曲或专辑，而不是音乐人名字。';renderIncomingProof();return}
+ S.incomingProof=track;S.error='';S.dialogue={incomingAnswer:pickLine('heardPraise'),incomingAfter:''};renderIncomingReply();}
+function renderIncomingReply(){S.view='incomingReply';const yes=S.incomingHeard;
+ shell(progress()+`<div class="eyebrow">${yes?'恰好听过':'收到一份推荐'}</div><div class="chat">${incomingChat()}</div>${yes?'<div class="proof-label">已递交一首熟悉作品 · 聊天中不展示</div>':''}<div class="space"></div>${button(yes?'那我也推荐一位 →':'谢谢推荐，轮到我了 →','compose','green block big-game')}`,genreName(S.genre));}
+function renderCompose(){S.view='compose';const d=S.nomDraft;let options=suggest(d.artist);let ready=!!d.artist.trim();let picked=d.picked&&norm(d.picked.name)===norm(d.artist);
+ shell(progress()+`<div class="eyebrow">轮到你推荐了</div><h2 class="h2">那你听过<br>这个吗？</h2><p class="lead" style="margin-bottom:15px">想分享哪位音乐人？输入名字即可搜索。</p>
+ <div class="form-row"><label for="artist">音乐人</label><input id="artist" class="field" autocomplete="off" maxlength="100" placeholder="输入名字，搜索或新建" value="${esc(d.artist)}"/><div id="suggestArea">${suggestHtml(options,d)}</div></div>
+ <div class="form-row"><label for="rec">如果没听过，推荐你听 TA 的……</label><input id="rec" class="field" maxlength="120" placeholder="一首歌 / 一张专辑" value="${esc(d.track)}"/></div>
+ <div id="composeError">${S.error?`<p class="err">${esc(S.error)}</p>`:''}</div><div class="space"></div>${button('发给 TA ↗','submitNom','green block big-game')}
+ <p class="assist">${picked?'已选中音乐人。':'搜不到就新建，本机保存；自建条目暂不参与战力判定。'}</p>`,genreName(S.genre));}
+function suggest(q){let n=norm(q);if(n.length===0)return [];let all=[...customs,...DB];return all.filter(a=>norm(a.name).includes(n)).slice(0,5)}
+function suggestHtml(options,d){const selected=d.picked&&norm(d.picked.name)===norm(d.artist);let h='';
+ if(d.remote.length){h+=`<div class="suggestions">${d.remote.map((a,i)=>`<button type="button" class="suggestion" data-suggestion="${i}" data-source="remote"><span><strong>${esc(a.name)}</strong><br><span class="suggest-remote-badge">MusicBrainz</span></span><small>${esc(a.type==='Group'?'乐队 / 组合':a.type==='Person'?'个人音乐人':'音乐人条目')}</small></button>`).join('')}</div>`}
+ if(options.length){h+=`<div class="suggestions">${options.map((a,i)=>`<button type="button" class="suggestion" data-suggestion="${i}" data-source="local"><span>${esc(a.name)}</span><small>${a.source==='custom'?'本机新建':'试玩样本'}</small></button>`).join('')}</div>`}
+ if(d.artist.trim()){h+=`<div class="search-status"><span>${selected?'✓ 已选音乐人':d.loading?'正在查 MusicBrainz…':'在线目录优先 · 找不到也能创建'}</span><span><button class="smalllink" data-act="searchOnline">重新搜索</button>&nbsp; <button class="smalllink" data-act="create">＋ 新建</button></span></div>`}
+ if(d.msg)h+=`<p class="assist" role="status">${esc(d.msg)}</p>`;
+ return h;
+}
+function updateSuggest(){const area=root.querySelector('#suggestArea');if(area)area.innerHTML=suggestHtml(suggest(S.nomDraft.artist),S.nomDraft)}
+const lookupCache=new Map();let searchTimer=null,querySequence=0,lastNetworkCall=0;let activeController=null;
+function scheduleSearch(){clearTimeout(searchTimer);const seq=++querySequence;let q=S.nomDraft.artist.trim();S.nomDraft.remote=[];if(activeController){activeController.abort();activeController=null}if(q.length<2){S.nomDraft.loading=false;S.nomDraft.msg='';updateSuggest();return}S.nomDraft.loading=true;S.nomDraft.msg='';updateSuggest();searchTimer=setTimeout(()=>onlineSearch(seq),580)}
+async function onlineSearch(seq){const d=S.nomDraft,query=d.artist.trim();if(query.length<2){d.loading=false;updateSuggest();return}if(seq==null){clearTimeout(searchTimer);seq=++querySequence;d.loading=true;updateSuggest()}
+ const cacheKey=norm(query);if(lookupCache.has(cacheKey)){if(seq!==querySequence)return;d.remote=lookupCache.get(cacheKey);d.msg=d.remote.length?'从线上目录选择音乐人。':'MusicBrainz 未收录，可创建新条目。';d.loading=false;updateSuggest();return}
+ const delay=Math.max(0,1100-(Date.now()-lastNetworkCall));if(delay)await new Promise(resolve=>setTimeout(resolve,delay));if(seq!==querySequence)return;
+ lastNetworkCall=Date.now();const controller=new AbortController();activeController=controller;const cancel=setTimeout(()=>controller.abort(),7500);
+ try{const safeQuery=query.replace(/[+\-!(){}\[\]^"~*?:\\/|&]/g,' ').trim();let url='https://musicbrainz.org/ws/2/artist/?query='+encodeURIComponent(safeQuery)+'&fmt=json&limit=12';let response=await fetch(url,{signal:controller.signal,headers:{'Accept':'application/json'}});if(!response.ok)throw new Error('HTTP '+response.status);let json=await response.json();if(seq!==querySequence)return;
+ let artists=(json.artists||[]).filter(x=>x.name&&x.id).map(x=>({name:x.name,mbid:x.id,type:x.type||'',genre:S.genre,source:'musicbrainz'}));const unique=new Map(artists.map(a=>[a.mbid,a]));d.remote=[...unique.values()].slice(0,12);lookupCache.set(cacheKey,d.remote);d.msg=d.remote.length?'已连接 MusicBrainz · 请选择正确的音乐人':'目录里没有找到，仍可新建。';
+ }catch(e){if(seq===querySequence){d.msg='在线搜索暂不可用。可用下方试玩样本，或新建音乐人。';d.remote=[]}}
+ finally{clearTimeout(cancel);if(activeController===controller)activeController=null;if(seq===querySequence){d.loading=false;updateSuggest()}}
+}
+function pickSuggestion(source,i){const v=source==='remote'?S.nomDraft.remote[i]:suggest(S.nomDraft.artist)[i];if(!v)return;S.nomDraft.picked=v;S.nomDraft.artist=v.name;S.nomDraft.remote=[];S.nomDraft.msg=source==='remote'?'已从 MusicBrainz 目录找到该音乐人。':'已选定音乐人。';const input=root.querySelector('#artist');if(input)input.value=v.name;updateSuggest()}
+function createArtist(){let name=S.nomDraft.artist.trim();if(!name){S.nomDraft.msg='先输入音乐人名称。';updateSuggest();return}let match=[...DB,...customs].find(x=>norm(x.name)===norm(name));if(match){S.nomDraft.picked=match;S.nomDraft.msg='这个音乐人已有条目，已为你选中。';updateSuggest();return}const a={name,genre:S.genre,track:'',source:'custom'};customs.push(a);S.nomDraft.picked=a;S.nomDraft.msg='已新建本地音乐人条目；等待后续数据核验。';save();updateSuggest()}
+function submitNom(){let d=S.nomDraft;let name=d.artist.trim(),track=d.track.trim();if(!name||!track){S.error='请填写音乐人和推荐歌曲 / 专辑。';renderCompose();return}if(norm(name)===norm(track)){S.error='推荐需要是具体作品，不能重复音乐人名字。';renderCompose();return}if(S.usedMine.includes(norm(name))){S.error='这个音乐人本局已经推荐过，换一个吧。';renderCompose();return}let a=d.picked&&norm(d.picked.name)===norm(name)?d.picked:[...DB,...customs].find(x=>norm(x.name)===norm(name));if(!a){a={name,genre:S.genre,source:'custom',track:''};customs.push(a);save()}S.nom={...a,name,recommended:track};S.usedMine.push(norm(name));const simulatedHash=[...norm(name)].reduce((n,c)=>((n*31+c.codePointAt(0))>>>0),7);const known=a.source==='sample'?S.opponent.knownNames.has(norm(name)):(simulatedHash%10)<(S.opponentRotation===2?6:S.opponentRotation===1?4:3);const verified=a.source==='sample'||a.source==='musicbrainz';S.reaction={known,verified,source:a.source};S.dialogue.outgoingAnswer=pickLine(known?'theirHeard':'theirUnknown');S.dialogue.myOutro=pickLine(known?'myHeardReply':'myPitch',track);if(known){S.dialogue.outgoingAnswer=pickLine('theirHeard');S.dialogue.outgoingFollow=pickLine('theirHeardFollow');}else{S.dialogue.outgoingAnswer=pickLine('theirUnknown');S.dialogue.outgoingFollow=pickLine('theirAcceptance');}renderReveal()}
+function renderReveal(){S.view='reveal';const v=S.reaction,d=S.dialogue;let history=incomingChat()+talk('你',`那你有听过 ${S.nom.name} 吗？`,'me')+talk(S.opponent.name,d.outgoingAnswer,'',true)+talk('你',d.myOutro,'me',true);
+ if(d.outgoingFollow)history+=talk(S.opponent.name,d.outgoingFollow,'',true);
+ shell(progress()+`<div class="eyebrow">${v.known?'遇到同好':'推荐已送达'}</div><div class="chat">${history}</div><div class="note">${v.verified?'已找到可复用的音乐人条目。对手是否听过由模拟规则决定，不是真实收听记录。':'你的提名是新建条目。可以完成推荐，但这一轮先记为待核验，不凭空判定对方一定不认识。'}</div><div class="space"></div>${button('查看这一轮 →','roundResult','green block')}`,genreName(S.genre))}
+function scoreRound(){const a=S.reaction;let status,why;
+ if(!a.verified){status='pending';why=`「${S.nom.name}」还没有可复用的音乐人条目。新推荐已收录，当前不参与演示战力结算。`}
+ else if(!a.known&&S.incomingHeard){status='win';why=`你听过对方的 ${S.incoming.name}，而模拟对手不认识 ${S.nom.name}。本轮出其不意。`}
+ else if(a.known&&!S.incomingHeard){status='loss';why=`你没听过 ${S.incoming.name}，而模拟对手认识 ${S.nom.name}。对方更出其不意。`}
+ else{status='tie';why=a.known?'你们都认识彼此推荐的音乐人。相遇的是同好，没有分出高下。':'你们都没听过彼此推荐的音乐人。互相安利成功，但无法判定谁更小众。'}
+ const r={genre:S.genre,other:S.incoming,mine:S.nom,heardOther:S.incomingHeard,heardProof:S.incomingHeard?S.incomingProof:'',otherHeard:a.known,status,why};S.results.push(r);return r}
+function renderRoundResult(){S.view='roundResult';let r=S.results.at(-1);const title={win:'这轮安利占优！',loss:'这轮被反安利了。',tie:'同好相认。',pending:'推荐已收录。'}[r.status];const badges={win:'本轮占优',loss:'对方占优',tie:'平手',pending:'待核验'};
+ shell(progress()+`<div class="eyebrow">本轮结算</div><div class="big-status ${r.status}">${title}</div><p class="lead">${esc(r.why)}</p><section class="status ${r.status}"><div class="row"><strong>${esc(r.mine.name)}</strong><span class="tag">${badges[r.status]}</span></div><div class="small" style="margin-top:7px">${r.otherHeard?'对手表示听过 · 未公开单曲':`你推荐《${esc(r.mine.recommended)}》`}</div><div class="hr" style="margin:12px 0"></div><div class="row"><strong>${esc(r.other.name)}</strong><span class="small">对手推荐</span></div><div class="small" style="margin-top:7px">TA 的本局曲目《${esc(r.other.track)}》${r.heardOther?' · 你听过这位音乐人':''}</div></section><div class="space"></div>${button(S.round===2?'查看本局结算 →':'下一轮 →','nextRound','green block')}`,genreName(S.genre))}
+function nextRound(){if(S.round>=2){finishBattle();return}S.round++;nextIncoming()}
+function finishBattle(){const valid=S.results.filter(x=>x.status!=='pending');let w=valid.filter(x=>x.status==='win').length,l=valid.filter(x=>x.status==='loss').length,t=valid.filter(x=>x.status==='tie').length;let result='draw';if(valid.length>=2){if(w>l)result='win';else if(l>w)result='loss';}else result='pending';let before=profile.rp;let delta=0;if(result==='win'||result==='loss'){let expected=1/(1+10**((S.opponent.rp-before)/400));let score=result==='win'?1:0;delta=Math.round(24*(score-expected));profile.rp=Math.max(0,profile.rp+delta)}profile.played++;if(result==='win')profile.wins++;profile.history.unshift({when:new Date().toISOString(),genre:S.genre,result,delta,rounds:S.results.map(x=>({name:x.mine.name,rec:x.mine.recommended,other:x.other.name,privateProof:x.heardProof,status:x.status}))});profile.history=profile.history.slice(0,50);S.rankBefore=before;S.rankDelta=delta;S.finalOutcome=result;save();renderFinal()}
+function renderFinal(){S.view='final';let out=S.finalOutcome;let title={win:'这局你赢了。',loss:'这局对面赢了。',draw:'谁也没压过谁。',pending:'这局等待核验。'}[out];let wins=S.results.filter(r=>r.status==='win').length,loss=S.results.filter(r=>r.status==='loss').length,ties=S.results.filter(r=>r.status==='tie').length,pending=S.results.filter(r=>r.status==='pending').length;let delta=S.rankDelta;
+ shell(`<div class="eyebrow">${esc(genreName(S.genre))} · 3 ROUND COMPLETE</div><h2 class="h1">${title}</h2><p class="lead">${wins} 次占优 · ${loss} 次失手 · ${ties} 次平手${pending?` · ${pending} 次待核验`:''}</p><section class="final-rank"><div class="small" style="margin-bottom:12px">我的试玩战力</div><div class="row"><div><span class="rank-num mono">${Math.round(profile.rp)}</span><div class="rank-name" style="margin-top:5px">${rankName(profile.rp)}</div></div><div class="delta ${delta>=0?'up':'down'}">${delta>0?'+':''}${delta} <span class="small">${pending?'含待核验轮次':''}</span></div></div></section><strong style="font-size:15px">本局安利清单</strong><div class="space"></div>${S.results.map((r,i)=>`<div class="statline"><div class="small">ROUND 0${i+1} · ${r.status==='win'?'你占优':r.status==='loss'?'对方占优':r.status==='tie'?'平手':'待核验'}</div><strong>${esc(r.mine.name)} <span class="faint">/</span> ${esc(r.other.name)}</strong><div class="small">你提名《${esc(r.mine.recommended)}》 · 对方的曲目《${esc(r.other.track)}》${r.tasteGood?' · 你送出「有品！」':''}</div></div>`).join('')}<div class="space"></div><div class="buttons">${button('再来一局','replay','green')}${button('复制推荐清单','copy','ghost')}</div><div id="copyNotice" class="copyline"></div><div class="space"></div><p class="assist">仅演示排位体验。MusicBrainz 负责核对音乐人身份，不提供小众评分；对手熟悉度及战力增减仍为模拟。</p>`,genreName(S.genre))}
+function copyList(){const txt='决战小众之巅 · 音乐推荐\n'+S.results.map((x,i)=>`${i+1}. 赛道：${genreName(x.genre)}\n我：${x.mine.name} — ${x.mine.recommended}\n对方：${x.other.name} — ${x.other.track}${x.tasteGood?'（有品！）':''}`).join('\n\n')+'\n—— 你有听过 TA 吗？';const ok=()=>{const n=root.querySelector('#copyNotice');if(n)n.textContent='已复制'};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(ok).catch(()=>legacy())}else legacy();function legacy(){const t=document.createElement('textarea');t.value=txt;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){root.querySelector('#copyNotice').textContent='复制失败，请截图保存。'}t.remove()}}
+function start(){if(!S.genre){const section=root.querySelector('.groups');if(section)section.scrollIntoView({behavior:'smooth'});return}S.opponentRotation=Math.floor(Math.random()*3);S.opponent=profileFor(S.genre,S.opponentRotation);S.round=0;S.results=[];S.usedMine=[];S.usedOther=[];renderMatch()}
+function replay(){S.opponentRotation=(S.opponentRotation+1)%3;S.opponent=profileFor(S.genre,S.opponentRotation);S.round=0;S.results=[];S.usedMine=[];S.usedOther=[];renderMatch()}
+root.addEventListener('input',e=>{if(e.target.id==='artist'){let d=S.nomDraft;d.artist=e.target.value;d.picked=null;d.remote=[];d.msg='';S.error='';scheduleSearch();return}if(e.target.id==='rec'){S.nomDraft.track=e.target.value;return}if(e.target.id==='heardProof'){S.incomingProof=e.target.value;S.error='';return}});
+root.addEventListener('click',e=>{const g=e.target.closest('[data-genre]');if(g){S.genre=g.dataset.genre;renderHome();return}const choice=e.target.closest('[data-suggestion]');if(choice){pickSuggestion(choice.dataset.source,Number(choice.dataset.suggestion));return}const act=e.target.closest('[data-act]')?.dataset.act;if(!act)return;
+ switch(act){case 'start':start();break;case 'reroll':S.opponentRotation=(S.opponentRotation+1)%3;S.opponent=profileFor(S.genre,S.opponentRotation);renderMatch();break;case 'nextincoming':nextIncoming();break;case 'hearYes':case 'hearNo':{const yes=act==='hearYes';const target=e.target.closest('.btn');if(target?.classList.contains('is-playing'))break;target?.classList.add('is-playing');root.querySelectorAll('.emotion-choices button').forEach(b=>b.disabled=true);try{if(navigator.vibrate)navigator.vibrate(yes?[15,30,20]:30)}catch(x){}setTimeout(()=>{S.incomingHeard=yes;S.error='';if(yes){S.dialogue={incomingAnswer:'',incomingAfter:''};renderIncomingProof()}else{S.dialogue={incomingAnswer:pickLine('theirPitch',S.incoming.track),incomingAfter:pickLine('myAcceptance')};renderIncomingReply()}},window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:440);break;}case 'submitProof':submitProof();break;case 'compose':renderCompose();break;case 'searchOnline':onlineSearch();break;case 'create':createArtist();break;case 'submitNom':submitNom();break;case 'roundResult':scoreRound();renderRoundResult();break;case 'nextRound':nextRound();break;case 'replay':replay();break;case 'copy':copyList();break;case 'reset':if(confirm('将本机的试玩战力重置为 1000？')){profile.rp=1000;profile.played=0;profile.wins=0;profile.history=[];save();renderHome()}break;}
+});
+
+// v1.0 · 搜索优化 + 真人对战 + 排行榜
+const CONF_KEY='niche_v10_config', CACHE_KEY='niche_v10_search';
+const conf=safeJson(CONF_KEY,{api:'',nickname:'',token:''});
+const cache=safeJson(CACHE_KEY,{});
+function saveConf(){try{localStorage.setItem(CONF_KEY,JSON.stringify(conf))}catch(e){}}
+function apiBase(){return(conf.api||'').replace(/\/+$/,'')}
+async function api(path,method='GET',data=null){if(!apiBase())throw Error('先填写 Worker API 地址');const h={Accept:'application/json'};if(data!==null)h['Content-Type']='application/json';if(conf.token)h.Authorization='Bearer '+conf.token;const r=await fetch(apiBase()+path,{method,headers:h,body:data===null?undefined:JSON.stringify(data)});const b=await r.json().catch(()=>({}));if(!r.ok)throw Error(b.error||'接口不可用');return b}
+const oldHome=renderHome;
+renderHome=function(){stopTimer();stopPolling();oldHome();root.querySelector('.rank-box')?.insertAdjacentHTML('afterend',`<div class="mode-tabs">${button('真人对局','human','outline')}${button('排行榜','leaderboard','ghost')}</div><p class="mini-meta">本机 AI 练习不计入真人排行榜</p>`)};
+const oldFinal=renderFinal;
+renderFinal=function(){oldFinal();root.querySelector('.buttons')?.insertAdjacentHTML('afterend',`<div class="space"></div>${button('看排行榜','leaderboard','outline block')}`)};
+foot=()=>'<div class="foot">v1.2 · 作品不设战斗力 · 有品反馈不加分 · 站内提名只统计已完成联网真人对局</div>';
+const oldCompose=renderCompose;
+renderCompose=function(){oldCompose();const label=root.querySelector('label[for="artist"]');if(label)label.innerHTML='音乐人 <span class="tag">也可直接填写</span>';const assist=root.querySelector('main > .assist:last-child');if(assist)assist.textContent='搜索是为了确认同名歌手；搜不到也可以提交，暂记为待核验。'};
+const liveCache={};
+function cacheSave(){try{localStorage.setItem(CACHE_KEY,JSON.stringify(Object.fromEntries(Object.entries(cache).slice(-60))))}catch(e){}}
+scheduleSearch=function(){clearTimeout(searchTimer);const seq=++querySequence,query=S.nomDraft.artist.trim();S.nomDraft.remote=[];S.nomDraft.loading=false;S.nomDraft.msg='';if(activeController){activeController.abort();activeController=null}updateSuggest();if(query.length<2)return;
+ if(cache[norm(query)]){S.nomDraft.remote=cache[norm(query)];S.nomDraft.msg='已从搜索缓存找到';updateSuggest();return}
+ if(suggest(query).length>=3){S.nomDraft.msg='先看看本地建议，也可点击联网搜索';updateSuggest();return}
+ S.nomDraft.loading=true;updateSuggest();searchTimer=setTimeout(()=>onlineSearch(seq),340)};
+onlineSearch=async function(seq){const d=S.nomDraft,q=d.artist.trim();if(q.length<2)return;if(seq==null){clearTimeout(searchTimer);seq=++querySequence;d.loading=true;updateSuggest()}
+ const thisSeq=seq,ctrl=new AbortController();activeController=ctrl;const t=setTimeout(()=>ctrl.abort(),4500);
+ try{let artists=[];if(apiBase()){
+  const r=await fetch(apiBase()+'/api/artists?q='+encodeURIComponent(q),{signal:ctrl.signal});if(!r.ok)throw Error('在线目录繁忙');const x=await r.json();artists=(x.artists||[]).map(a=>({name:a.name,mbid:a.id,type:a.type==='组合'?'Group':a.type==='个人'?'Person':'',genre:S.genre,source:'musicbrainz'}));
+ }else{const wait=Math.max(0,1100-(Date.now()-lastNetworkCall));if(wait)await new Promise(r=>setTimeout(r,wait));if(thisSeq!==querySequence)return;lastNetworkCall=Date.now();const query=q.replace(/[+\-!(){}\[\]^"~*?:\\/|&]/g,' ').trim();const r=await fetch('https://musicbrainz.org/ws/2/artist/?query='+encodeURIComponent(query)+'&fmt=json&limit=12',{signal:ctrl.signal});if(!r.ok)throw Error('在线目录繁忙');const x=await r.json();artists=(x.artists||[]).filter(a=>a.name&&a.id).map(a=>({name:a.name,mbid:a.id,type:a.type||'',genre:S.genre,source:'musicbrainz'}));}
+ if(thisSeq!==querySequence)return;d.remote=artists.slice(0,12);cache[norm(q)]=d.remote;cacheSave();d.msg=d.remote.length?'已找到，点选名字即可确认':'目录未收录？可以直接输入推荐';
+ }catch(e){if(thisSeq===querySequence)d.msg='在线音乐人目录暂时连不上（可能是网络或接口限流）；本地匹配和直接填写仍可用。'}finally{clearTimeout(t);if(activeController===ctrl)activeController=null;if(thisSeq===querySequence){d.loading=false;updateSuggest()}}
+};
+function humanPage(){stopPolling();stopTimer();shell(`<div class="eyebrow">REAL MATCH</div><h2 class="h2">棋逢对手，<br>再聊一轮。</h2><div class="two-cards"><section class="option-card"><strong>双人同屏</strong><p>轮流传手机。倒计时与加赛可以立即试玩。</p>${button('开始同屏局','seatSetup','green block')}</section><section class="option-card"><strong>远程约局</strong><p>给朋友房间码；需先部署 Cloudflare Worker。</p>${button('创建 / 加入','liveSetup','outline block')}</section></div><div class="space"></div>${button('排行榜','leaderboard','ghost block')}${button('返回首页','home','outline block')}`)}
+function genreOptions(){return GENRES.map(([n,g])=>`<option value="${esc(g)}" ${S.genre===g?'selected':''}>${esc(n)}</option>`).join('')}
+function setupSeat(){stopTimer();if(!S.genre)S.genre='popcn';shell(`<div class="eyebrow">TWO PLAYERS / ONE SCREEN</div><h2 class="h2">先选流派。</h2><div class="form-row"><label>流派</label><select class="field" id="seatGenre">${genreOptions()}</select></div><p class="note">提名 110 秒，回答 45 秒。三轮后双方同意，就继续加赛。</p>${button('开始 →','seatStart','green block')}${button('返回','human','ghost block')}`)}
+const seat={phase:'',round:1,seq:0,first:'a',turn:'a',offer:null,history:[],score:{a:0,b:0},vote:{a:null,b:null},endAt:0,draft:{name:'',track:'',proof:'',heard:null},error:''};
+let ticker=null;
+function stopTimer(){if(ticker){clearInterval(ticker);ticker=null}}
+function timeStr(ms){let x=Math.max(0,Math.ceil(ms/1000));return `${String(Math.floor(x/60)).padStart(2,'0')}:${String(x%60).padStart(2,'0')}`}
+function timer(sec){seat.endAt=Date.now()+sec*1000;stopTimer();ticker=setInterval(()=>{if(!seat.phase||['done','ready','vote'].includes(seat.phase))return;const m=seat.endAt-Date.now(),el=root.querySelector('#gameTimer');if(el){el.textContent=timeStr(m);el.classList.toggle('urgent',m<12000)}if(m<=0){stopTimer();seatTimeout()}},250)}
+function other(a){return a==='a'?'b':'a'}
+function seatStart(){S.genre=root.querySelector('#seatGenre')?.value||S.genre||'popcn';Object.assign(seat,{phase:'offer',round:1,seq:0,first:'a',turn:'a',offer:null,history:[],score:{a:0,b:0},vote:{a:null,b:null},draft:{name:'',track:'',proof:'',heard:null},error:''});timer(110);renderSeat()}
+function seatEnd(){seat.phase=seat.round>=3?'vote':'ready';seat.turn=null;seat.vote={a:null,b:null};stopTimer()}
+function seatNext(){seat.round++;seat.seq=0;seat.first=seat.round%2?'a':'b';seat.turn=seat.first;seat.phase='offer';seat.offer=null;seat.draft={name:'',track:'',proof:'',heard:null};timer(110)}
+function seatTimeout(){if(seat.phase==='offer'){seat.history.push({round:seat.round,who:seat.turn,name:'（超时）',timeout:'offer'});seat.score[other(seat.turn)]++;if(!seat.seq){seat.seq=1;seat.turn=other(seat.first);timer(110)}else seatEnd()}else if(seat.phase==='respond')seatRespond(true);renderSeat()}
+function seatRespond(timeout=false){if(!timeout&&typeof seat.draft.heard!=='boolean')return;if(!timeout&&seat.draft.heard&&!seat.draft.proof.trim()){seat.error='请推荐一首音乐人作品作为熟悉度凭据';renderSeat();return}
+ const o=seat.offer;seat.history.push({round:seat.round,who:o.who,name:o.name,track:o.track,heard:timeout?null:seat.draft.heard,timeout:timeout?'respond':null});if(timeout||seat.draft.heard===false)seat.score[o.who]++;
+ seat.offer=null;seat.error='';seat.draft={name:'',track:'',proof:'',heard:null};if(!seat.seq){seat.seq=1;seat.turn=other(seat.first);seat.phase='offer';timer(110)}else seatEnd();if(!timeout)renderSeat()}
+function seatOffer(){const name=seat.draft.name.trim(),track=seat.draft.track.trim();if(!name||!track||norm(name)===norm(track)){seat.error='还差音乐人和推荐曲目～';renderSeat();return}seat.offer={who:seat.turn,name,track};seat.phase='respond';seat.turn=other(seat.turn);seat.draft={name:'',track:'',proof:'',heard:null};seat.error='';timer(45);renderSeat()}
+function seatVote(yes){if(seat.vote.a===null)seat.vote.a=yes;else seat.vote.b=yes;if(seat.vote.b!==null){if(seat.vote.a&&seat.vote.b&&seat.round<8)seatNext();else seat.phase='done'}renderSeat()}
+function seatHistory(){return seat.history.filter(e=>e.round===seat.round).map(e=>`<div class="history-row">${e.who==='a'?'A':'B'}：${esc(e.name)} · ${e.timeout?'超时':e.heard===true?'听过':e.heard===false?'没听过':'未回应'}</div>`).join('')}
+function renderSeat(){let timerActive=['offer','respond'].includes(seat.phase);let html=`<div class="timer-row"><span>${esc(genreName(S.genre))} · 第 ${seat.round} 轮</span>${timerActive?`<strong id="gameTimer">${timeStr(seat.endAt-Date.now())}</strong>`:'<span class="tag">真人同屏</span>'}</div><div class="space"></div>`;
+ if(seat.phase==='offer')html+=`<div class="eyebrow">交给玩家 ${seat.turn.toUpperCase()}</div><h2 class="h2">你有听过<br>这个吗？</h2><div class="form-row"><label>音乐人</label><input id="seatArtist" class="field" placeholder="直接填名字" value="${esc(seat.draft.name)}"/></div><div class="form-row"><label>推荐曲 / 专辑</label><input id="seatTrack" class="field" placeholder="留一首给没听过的人" value="${esc(seat.draft.track)}"/></div>${button('发出安利 ↗','seatOffer','green block')}`;
+ else if(seat.phase==='respond')html+=`<div class="eyebrow">交给玩家 ${seat.turn.toUpperCase()}</div><div class="chat">${talk('对方',`你有听过 ${seat.offer.name} 吗？`)}</div><div class="emotion-choices"><button class="btn emote-yes" data-act="seatYes">听过！！ <span class="emote-mark">↗</span></button><button class="btn emote-no" data-act="seatNo">没听过… <span class="emote-mark">↓</span></button></div>${seat.draft.heard===true?`<div class="form-row"><label>私下推荐 TA 哪首？</label><input id="seatProof" class="field" value="${esc(seat.draft.proof)}" placeholder="歌曲或专辑名"/></div>${button('递交这首','seatRespond','green block')}`:''}${seat.draft.heard===false?`<p class="note">好哦好哦，收下安利 (´▽｀)<br>推荐《${esc(seat.offer.track)}》</p>${button('继续 →','seatRespond','green block')}`:''}`;
+ else if(seat.phase==='ready')html+=`<h2 class="h2">换个话题继续。</h2><div class="history">${seatHistory()}</div><div class="space"></div>${button('下一轮 →','seatNext','green block')}`;
+ else if(seat.phase==='vote')html+=`<div class="eyebrow">第 ${seat.round} 轮结束</div><h2 class="h2">再聊一轮？</h2><p class="lead">双方都点头才继续。</p>${seat.vote.a===null?'<div class="section">玩家 A 决定</div>':'<div class="section">玩家 B 决定</div>'}${button('好啊，再来一轮','seatVoteYes','green block')}${button('今天先到这儿','seatVoteNo','outline block')}`;
+ else html+=`<div class="eyebrow">本局结束</div><h2 class="h2">${seat.score.a===seat.score.b?'有来有往。':seat.score.a>seat.score.b?'A 的安利略占上风。':'B 的安利略占上风。'}</h2><p class="lead">A 成功安利 ${seat.score.a} 次 · B 成功安利 ${seat.score.b} 次</p>${button('再来一局','seatSetup','green block')}<p class="mini-meta">同屏体验不计入真人排行榜。</p>`;
+ shell(html+(seat.error?`<p class="err">${esc(seat.error)}</p>`:'')+`<div class="space"></div>${button('返回首页','home','ghost block')}`)}
+const live={mode:'',room:null,poll:null,tick:null,sig:'',draft:{artist:'',track:'',proof:'',heard:null,chosen:null},err:'',busy:false};
+function stopPolling(){if(live.poll){clearInterval(live.poll);live.poll=null}if(live.tick){clearInterval(live.tick);live.tick=null}}
+function liveSetup(){stopPolling();live.mode='setup';shell(`<div class="eyebrow">远程真人房间</div><h2 class="h2">约个人，<br>聊聊歌。</h2><div class="form-row"><label>Worker API 地址</label><input class="field" id="apiUrl" value="${esc(conf.api)}" placeholder="https://xxx.workers.dev"/></div><p class="mini-meta">服务器尚未部署时，远程功能与全站榜无法使用；可以先试玩同屏模式。</p><div class="form-row"><label>我的昵称</label><input class="field" id="playerNick" maxlength="20" placeholder="至少两个字" value="${esc(conf.nickname)}"/></div><div class="form-row"><label>流派</label><select id="liveGenre" class="field">${genreOptions()}</select></div><div class="buttons">${button('创建房间','roomCreate','green')}${button('加入房间','roomJoin','outline')}</div><div class="form-row"><label>加入时填写六位房间码</label><input id="roomCode" class="field" maxlength="6" placeholder="例如：AB34CD"/></div><p class="err">${esc(live.err)}</p>${button('返回','human','ghost block')}`)}
+function liveConfigSave(){conf.api=root.querySelector('#apiUrl')?.value.trim()||conf.api;conf.nickname=root.querySelector('#playerNick')?.value.trim()||conf.nickname;S.genre=root.querySelector('#liveGenre')?.value||S.genre||'popcn';saveConf()}
+async function ensureIdentity(){if(conf.token){try{return await api('/api/me')}catch{conf.token='';saveConf()}}if(!conf.nickname||conf.nickname.length<2)throw Error('先填写一个至少两个字的昵称');let x=await api('/api/players','POST',{nickname:conf.nickname});conf.token=x.token;saveConf();return x}
+async function createRoom(){liveConfigSave();live.err='';try{await ensureIdentity();let x=await api('/api/rooms','POST',{genre:S.genre});enterRoom(x.room)}catch(e){live.err=String(e.message);liveSetup()}}
+async function joinRoom(){liveConfigSave();live.err='';let code=root.querySelector('#roomCode')?.value.trim().toUpperCase();if(!/^[A-Z0-9]{6}$/.test(code)){live.err='房间码应为六位';liveSetup();return}try{await ensureIdentity();let x=await api('/api/rooms/'+code+'/join','POST',{});enterRoom(x.room)}catch(e){live.err=String(e.message);liveSetup()}}
+function enterRoom(room){stopTimer();stopPolling();live.mode='room';live.room=room;live.sig=JSON.stringify(room.state);live.draft={artist:'',track:'',proof:'',heard:null,chosen:null};renderRoom();live.tick=setInterval(()=>{let el=root.querySelector('#gameTimer'),s=live.room?.state;if(el&&s?.phaseExpiresAt){const ms=s.phaseExpiresAt-Date.now();el.textContent=timeStr(ms);el.classList.toggle('urgent',ms<12000)}},300);live.poll=setInterval(async()=>{if(live.mode!=='room'||live.busy)return;try{let x=await api('/api/rooms/'+live.room.code);live.room=x.room;const sig=JSON.stringify(x.room.state);if(sig!==live.sig){live.sig=sig;renderRoom()}}catch(e){const el=root.querySelector('#connection');if(el)el.textContent='连接暂时中断：'+String(e.message)}},2600)}
+async function doRoom(type,payload={}){if(live.busy)return;live.busy=true;live.err='';try{let x=await api('/api/rooms/'+live.room.code+'/actions','POST',{type,...payload});live.room=x.room;live.sig=JSON.stringify(x.room.state);live.draft={artist:'',track:'',proof:'',heard:null,chosen:null};renderRoom()}catch(e){live.err=String(e.message);renderRoom()}finally{live.busy=false}}
+function roomInvite(){const code=live.room?.code||'';let u=new URL(location.href);u.searchParams.set('room',code);const txt=`决战小众之巅 · 你有听过 XXX 吗？\n房间码：${code}\n${u}`;if(navigator.clipboard?.writeText)navigator.clipboard.writeText(txt).then(()=>{let el=root.querySelector('#connection');if(el)el.textContent='已复制房间码和链接'}).catch(()=>prompt('复制邀请',txt));else prompt('复制邀请',txt)}
+function roomExchanges(s){const rows=s.exchanges?.filter(x=>x.round===s.round)||[];return rows.map(x=>`<div class="history-row"><strong>${x.role==='host'?'房主':'朋友'}</strong>：${esc(x.name)} · ${x.timeout?'超时':x.heard===true?'听过':x.heard===false?'没听过':'待回应'}</div>`).join('')}
+function renderRoom(){if(live.mode!=='room')return;let room=live.room,s=room.state,me=room.role,mine=s.turn===me;let time=['offer','respond'].includes(s.phase)&&s.phaseExpiresAt;
+ let html=`<div class="timer-row"><span>${esc(genreName(room.genre))} · 第 ${s.round} 轮</span>${time?`<strong id="gameTimer">${timeStr(s.phaseExpiresAt-Date.now())}</strong>`:'<span class="tag">真人房间</span>'}</div><div class="row" style="margin:17px 0 12px"><strong>房间 ${room.code}</strong><button class="smalllink" data-act="roomInvite">复制邀请</button></div><p class="mini-meta" id="connection">每 2–3 秒同步一次；倒计时按服务器时间。</p>`;
+ if(s.phase==='waiting')html+=`<h2 class="h2">等朋友来。</h2><p class="lead">把房间码发给 TA。</p>${button('复制房间邀请','roomInvite','green block')}`;
+ else if(s.phase==='offer')html+=mine?`<div class="eyebrow">轮到你提名</div><h2 class="h2">你有听过<br>这个吗？</h2><div class="form-row"><label>音乐人</label><input id="liveArtist" class="field" value="${esc(live.draft.artist)}" placeholder="搜索或直接提名"/><p class="mini-meta" id="liveSearchLabel">${live.draft.chosen?'已匹配音乐人目录':'未匹配也能聊，战力待核验'}</p><div id="liveMatches"></div></div><div class="form-row"><label>推荐曲 / 专辑</label><input id="liveTrack" class="field" value="${esc(live.draft.track)}" placeholder="填一首具体作品"/></div>${button('发出安利 ↗','roomOffer','green block')}`:`<h2 class="h2">对方正在挑歌。</h2><p class="lead">会拿出什么呢？</p>${roomExchanges(s)}`;
+ else if(s.phase==='respond')html+=mine?`<div class="chat">${talk('对方',`你有听过 ${s.offer?.name} 吗？`)}</div><div class="emotion-choices"><button class="btn emote-yes" data-act="roomYes">听过！！ <span class="emote-mark">↗</span></button><button class="btn emote-no" data-act="roomNo">没听过… <span class="emote-mark">↓</span></button></div>${live.draft.heard===true?`<div class="form-row"><label>私下留一首 TA 的作品</label><input id="liveProof" class="field" value="${esc(live.draft.proof)}" placeholder="一首歌或一张专辑"/></div>${button('确认听过','roomRespond','green block')}`:''}${live.draft.heard===false?`<p class="note">好哦好哦，先记下啦 (´▽｀)</p>${button('收下推荐，继续','roomRespond','green block')}`:''}`:`<h2 class="h2">等对方回答。</h2><p class="lead">也许你们正好听过同一位。</p>`;
+ else if(s.phase==='ready')html+=`<div class="eyebrow">ROUND ${s.round} COMPLETE</div><h2 class="h2">这轮聊完了。</h2>${roomExchanges(s)}<div class="space"></div>${s.ready?.[me]?'<p class="note">你已准备好，等对方继续。</p>':button('下一轮 →','roomReady','green block')}`;
+ else if(s.phase==='vote')html+=`<div class="eyebrow">ROUND ${s.round} COMPLETE</div><h2 class="h2">再聊一轮？</h2><p class="lead">两个人都答应，才继续。</p>${s.vote?.[me]!==null?'<p class="note">你已作决定，等对方回应。</p>':`<div class="buttons">${button('当然，再聊聊','roomVoteYes','green')}${button('今天先到这儿','roomVoteNo','outline')}</div>`}`;
+ else if(s.phase==='done')html+=`<div class="eyebrow">真人测试赛 · 本局结束</div><h2 class="h2">${s.result?.outcome==='draw'?'有来有往。':s.result?.outcome===me?'这局你的安利更出其不意。':'这局对方略胜一筹。'}</h2><p class="lead">你成功安利 ${s.result?.[me]||0} 次，对方 ${s.result?.[me==='host'?'guest':'host']||0} 次。</p>${s.result?.rated?`<div class="rank-box"><div class="small">本局真人测试战力变化</div><div class="rank-num">${s.result.delta?.[me]>0?"+":""}${s.result.delta?.[me]||0}</div><div class="mini-meta">胜负记录已由服务器结算</div></div>`:`<div class="note">本局有尚待核验的音乐人或超时，因此不计正式排位战力。可以继续查看推荐清单。</div>`}<p class="mini-meta">歌手身份可查，但推荐作品及听歌自述尚未人工核验；排行榜仍属测试版。</p><div class="space"></div>${button('查看排行榜','leaderboard','green block')}`;
+ shell(html+(live.err?`<p class="err">${esc(live.err)}</p>`:'')+`<div class="space"></div>${button('返回首页','home','ghost block')}`,'远程真人')}
+async function roomOffer(){const artist=live.draft.artist.trim(),track=live.draft.track.trim();if(artist.length<2||!track||norm(artist)===norm(track)){live.err='请填写音乐人和一首具体作品';renderRoom();return}let match=live.draft.chosen;await doRoom('offer',{name:artist,track,artistId:match?.mbid||'',source:match?.mbid?'musicbrainz':'custom'})}
+async function roomRespond(){if(typeof live.draft.heard!=='boolean')return;if(live.draft.heard&&!live.draft.proof.trim()){live.err='听过的话，请递交一首熟悉作品';renderRoom();return}await doRoom('respond',{heard:live.draft.heard,proof:live.draft.proof})}
+let liveSearchTimeout=null,liveSearchId=0;
+async function roomSearch(){const id=++liveSearchId,q=live.draft.artist.trim();clearTimeout(liveSearchTimeout);if(q.length<2)return;const found=cache[norm(q)];if(found){showLiveMatches(found);return}
+ liveSearchTimeout=setTimeout(async()=>{try{let list;if(apiBase()){const x=await api('/api/artists?q='+encodeURIComponent(q));list=(x.artists||[]).map(a=>({name:a.name,mbid:a.id}))}else{const r=await fetch('https://musicbrainz.org/ws/2/artist/?query='+encodeURIComponent(q)+'&fmt=json&limit=10');const x=await r.json();list=(x.artists||[]).map(a=>({name:a.name,mbid:a.id}))}if(id!==liveSearchId)return;cache[norm(q)]=list;cacheSave();showLiveMatches(list)}catch{let e=root.querySelector('#liveSearchLabel');if(e)e.textContent='在线未响应，也能继续提名'}},520)}
+function showLiveMatches(items){let el=root.querySelector('#liveMatches');if(el)el.innerHTML=items.slice(0,7).map((a,i)=>`<button type="button" class="suggestion" data-live-name="${esc(a.name)}" data-live-id="${esc(a.mbid)}">${esc(a.name)} <span class="small">MusicBrainz</span></button>`).join('')||'<p class="mini-meta">没有结果？直接发出提名也可以。</p>'}
+function renderLeaderboard(genre='all'){stopPolling();stopTimer();live.mode='leaderboard';let opts='<option value="all">全流派</option>'+GENRES.map(([n,g])=>`<option value="${g}" ${genre===g?'selected':''}>${esc(n)}</option>`).join('');shell(`<div class="eyebrow">LEADERBOARD · TEST</div><h2 class="h2">小众排行榜。</h2><p class="lead">仅计算有效的联网真人对局，不使用模拟玩家。</p><div class="form-row"><label>筛选流派</label><select id="lbGenre" class="field">${opts}</select></div><div class="rank-box"><div class="small">本机练习战力（不在真人榜）</div><div class="rank-num">${Math.round(profile.rp)}</div><div class="mini-meta">${profile.played} 场 · ${profile.wins} 胜</div></div><div class="section">联网真人榜 <span class="tag">内测 / 未反作弊</span></div><div id="leaderRows" class="note">${apiBase()?'读取中…':'还没连接 Worker。不会显示虚构排行榜。'}</div><div class="space"></div>${button('设置联网地址','setApi','outline block')}${button('返回首页','home','ghost block')}`);if(apiBase())loadLeaderboard(genre)}
+async function loadLeaderboard(genre){try{let x=await api('/api/leaderboard'+(genre==='all'?'':'?genre='+encodeURIComponent(genre)));if(live.mode!=='leaderboard')return;let el=root.querySelector('#leaderRows');if(!el)return;el.innerHTML=x.entries?.length?x.entries.map(r=>`<div class="leader-row"><span class="leader-place">${r.rank}</span><div class="leader-name">${esc(r.nickname)}${conf.token.startsWith(r.id+'.')?' <span class="tag">我</span>':''}<div class="small">${r.games} 场 · ${r.wins} 胜</div></div><strong>${r.rating}</strong></div>`).join(''):'还没有可计入榜单的真人对局，先来一场吧。'}catch(e){let el=root.querySelector('#leaderRows');if(el)el.textContent='无法连接榜单：'+String(e.message)}}
+function apiSetup(){shell(`<div class="eyebrow">连接全站榜</div><h2 class="h2">填写 API 地址。</h2><p class="lead">部署包里有 Cloudflare Worker + D1 的配置说明。</p><div class="form-row"><label>Worker API 地址</label><input id="apiUrl" class="field" placeholder="https://xxx.workers.dev" value="${esc(conf.api)}"/></div>${button('保存','apiSave','green block')}${button('返回','leaderboard','ghost block')}`)}
+root.addEventListener('input',ev=>{
+ if(ev.target.id==='seatArtist')seat.draft.name=ev.target.value;
+ if(ev.target.id==='seatTrack')seat.draft.track=ev.target.value;
+ if(ev.target.id==='seatProof')seat.draft.proof=ev.target.value;
+ if(ev.target.id==='liveArtist'){live.draft.artist=ev.target.value;live.draft.chosen=null;roomSearch()}
+ if(ev.target.id==='liveTrack')live.draft.track=ev.target.value;
+ if(ev.target.id==='liveProof')live.draft.proof=ev.target.value;
+});
+root.addEventListener('change',ev=>{if(ev.target.id==='lbGenre')renderLeaderboard(ev.target.value)});
+root.addEventListener('click',ev=>{
+ const item=ev.target.closest('[data-live-id]');if(item){live.draft.artist=item.dataset.liveName;live.draft.chosen={mbid:item.dataset.liveId,name:item.dataset.liveName};let inp=root.querySelector('#liveArtist');if(inp)inp.value=item.dataset.liveName;let m=root.querySelector('#liveMatches');if(m)m.innerHTML='';let l=root.querySelector('#liveSearchLabel');if(l)l.textContent='✓ 已从 MusicBrainz 选中';return}
+ const act=ev.target.closest('[data-act]')?.dataset.act;if(!act)return;
+ if(act==='home')renderHome();
+ else if(act==='human')humanPage();
+ else if(act==='seatSetup')setupSeat();else if(act==='seatStart')seatStart();else if(act==='seatOffer')seatOffer();
+ else if(act==='seatYes'||act==='seatNo'){seat.draft.heard=act==='seatYes';renderSeat()}
+ else if(act==='seatRespond')seatRespond();else if(act==='seatNext'){seatNext();renderSeat()}
+ else if(act==='seatVoteYes'||act==='seatVoteNo')seatVote(act==='seatVoteYes');
+ else if(act==='liveSetup')liveSetup();else if(act==='roomCreate')createRoom();else if(act==='roomJoin')joinRoom();
+ else if(act==='roomOffer')roomOffer();else if(act==='roomRespond')roomRespond();
+ else if(act==='roomYes'||act==='roomNo'){live.draft.heard=act==='roomYes';renderRoom()}
+ else if(act==='roomReady')doRoom('ready');else if(act==='roomVoteYes'||act==='roomVoteNo')doRoom('vote',{yes:act==='roomVoteYes'});
+ else if(act==='roomInvite')roomInvite();else if(act==='leaderboard')renderLeaderboard();
+ else if(act==='setApi')apiSetup();else if(act==='apiSave'){conf.api=root.querySelector('#apiUrl')?.value.trim()||'';saveConf();renderLeaderboard()}
+});
+const inviteCode=new URLSearchParams(location.search).get('room');
+if(inviteCode&&/^[a-z0-9]{6}$/i.test(inviteCode))setTimeout(()=>{liveSetup();let input=root.querySelector('#roomCode');if(input)input.value=inviteCode.toUpperCase()},0);
+
+
+// === v1.0 SOLO PATCH: timer + recall-first autocomplete; game scoring is unchanged ===
+// Only the solo practice path is wrapped. Human same-screen and online logic remain intact.
+const SOLO_SECONDS={incoming:10,incomingProof:60,compose:60};
+let soloClockPhase='',soloClockUntil=0,soloClockTick=null;
+function clearSoloClock(){if(soloClockTick){clearInterval(soloClockTick);soloClockTick=null}soloClockPhase='';soloClockUntil=0}
+function soloClockView(){
+ const pane=root.querySelector('main');if(!pane||!SOLO_SECONDS[S.view])return;
+ let expired=Date.now()>=soloClockUntil;
+ pane.insertAdjacentHTML('afterbegin',`<div class="solo-clock ${expired?'expired':''}"><div class="timer-row"><span>${({incoming:'回应对方',incomingProof:'私下递交作品',compose:'提出你的推荐'})[S.view]}</span><strong id="soloTimer" class="${soloClockUntil-Date.now()<((S.view==='incoming'?5:10)*1000)?'urgent':''}">${timeStr(soloClockUntil-Date.now())}</strong></div><p class="mini-meta" id="soloTimerHint">${expired?'时间到了，也可以继续；不改变原有胜负判定。':'单机限时提醒，不自动扣分或改判。'}</p></div>`);
+}
+function soloClockUpdate(){
+ if(!SOLO_SECONDS[S.view]){clearSoloClock();return}
+ const el=root.querySelector('#soloTimer');if(!el)return;
+ const ms=soloClockUntil-Date.now();el.textContent=timeStr(ms);
+ el.classList.toggle('urgent',ms>0&&ms<(S.view==='incoming'?5000:10000));
+ const wrap=el.closest('.solo-clock');if(wrap)wrap.classList.toggle('expired',ms<=0);
+ const hint=root.querySelector('#soloTimerHint');if(hint&&ms<=0)hint.textContent='时间到了，也可以继续；不改变原有胜负判定。';
+}
+function soloClockEnter(phase){
+ if(soloClockPhase!==phase){soloClockPhase=phase;soloClockUntil=Date.now()+SOLO_SECONDS[phase]*1000}
+ soloClockView();soloClockUpdate();
+ if(!soloClockTick)soloClockTick=setInterval(soloClockUpdate,200);
+}
+const soloRenderIncoming=renderIncoming;
+renderIncoming=function(){soloRenderIncoming();soloClockEnter('incoming')};
+const soloRenderIncomingProof=renderIncomingProof;
+renderIncomingProof=function(){soloRenderIncomingProof();soloClockEnter('incomingProof');mountSoloAutocomplete('heardProof')};
+const soloRenderCompose=renderCompose;
+renderCompose=function(){soloRenderCompose();soloClockEnter('compose');mountSoloAutocomplete('rec')};
+const soloRenderIncomingReply=renderIncomingReply;
+renderIncomingReply=function(){clearSoloClock();soloRenderIncomingReply()};
+const soloRenderReveal=renderReveal;
+renderReveal=function(){clearSoloClock();soloRenderReveal()};
+// Returning to home or selecting human/online match clears the solo clock.
+const soloRenderHome=renderHome;
+renderHome=function(){clearSoloClock();soloRenderHome()};
+const soloHumanPage=humanPage;
+humanPage=function(){clearSoloClock();soloHumanPage()};
+const soloRenderLeaderboard=renderLeaderboard;
+renderLeaderboard=function(genre='all'){clearSoloClock();soloRenderLeaderboard(genre)};
+const soloRenderMatch=renderMatch;
+renderMatch=function(){clearSoloClock();soloRenderMatch()};
+
+// The input itself must be filled by the player. No unprompted list of songs is presented.
+let soloSongSeq=0,soloSongDebounce=null,soloSongController=null;
+const soloSongCache=new Map();
+let soloCurrentSongResults=[];
+function songContext(field){
+ if(field==='heardProof')return {artist:S.incoming?.name||'',mbid:S.incoming?.mbid||''};
+ return {artist:S.nomDraft.artist.trim(),mbid:S.nomDraft.picked?.mbid||''};
+}
+// 离线补全库用于网络受限时的输入辅助；它不是猜歌题库或判分依据。
+// 仅当玩家先输入曲名片段后显示，不主动提供答案。
+const SOLO_LOCAL_MORE={
+ '田馥甄':['你就不要想起我','魔鬼中的天使','小幸运','寂寞寂寞就好'],
+ '王菲':['流年','矜持','旋木','天空','红豆'],
+ '周杰伦':['晴天','夜曲','七里香','以父之名','稻香'],
+ '陈绮贞':['太聪明','旅行的意义','九份的咖啡店','鱼'],
+ '孙燕姿':['遇见','我怀念的','天黑黑','逆光'],
+ '魏如萱':['你啊你啊','香格里拉','末路狂花'],
+ '椎名林檎':['丸ノ内サディスティック','本能','ここでキスして。','長く短い祭'],
+ '宇多田光':['First Love','Automatic','One Last Kiss','光'],
+ 'Lamp':['恋人へ','For Lovers','ゆめうつつ','二十歳の恋'],
+ 'Fishmans':['Long Season','Nightcruising','いかれたBaby','Baby Blue'],
+ 'Duster':['Inside Out','Me and the Birds','Gold Dust','Constellations'],
+ 'Radiohead':['No Surprises','Nude','Weird Fishes/Arpeggi','Karma Police','Paranoid Android'],
+ 'Slowdive':['Alison','When the Sun Hits','Sugar for the Pill'],
+ 'My Bloody Valentine':['Sometimes','When You Sleep','Only Shallow'],
+ 'The Strokes':['Someday','Reptilia','Last Nite'],
+ 'Lana Del Rey':['Video Games','West Coast','Venice Bitch'],
+ 'Taylor Swift':['august','cardigan','Anti-Hero','All Too Well'],
+ 'Billie Eilish':['ocean eyes','bad guy','Happier Than Ever'],
+ 'IU':['밤편지','Blueming','Love wins all','Celebrity'],
+ '田馥甄 Hebe Tien':['你就不要想起我','魔鬼中的天使','小幸运'],
+ '山下达郎':['Ride on Time','Sparkle','クリスマス・イブ'],
+ '竹内玛莉亚':['Plastic Love','September'],
+ 'NewJeans':['Ditto','Hype Boy','Super Shy'],
+ 'FKA twigs':['cellophane','Two Weeks','Eusexua'],
+ 'Low':['Words','Lullaby','Sunflower'],
+ 'Codeine':['D','Cave-In','Pickup Song'],
+ 'Aphex Twin':['Xtal','Windowlicker','Avril 14th'],
+ 'Yung Lean':['Ginseng Strip 2002','Kyoto','Agony'],
+ 'MF DOOM':['Rapp Snitch Knishes','Doomsday','One Beer']
+};
+const SOLO_ARTIST_ALIASES={'hebetien':'田馥甄','田馥甄':'田馥甄','fishmans':'Fishmans'};
+const SOLO_RECENTS_KEY='niche_v10_song_recent';
+let soloRecentSongs=safeJson(SOLO_RECENTS_KEY,{});
+function rememberSoloSong(artist,title){
+ if(!artist||!title)return;
+ const key=norm(artist);const items=soloRecentSongs[key]||[];
+ soloRecentSongs[key]=[title,...items.filter(x=>norm(x)!==norm(title))].slice(0,20);
+ try{localStorage.setItem(SOLO_RECENTS_KEY,JSON.stringify(soloRecentSongs))}catch(e){}
+}
+function localSongMatches(artist,partial){
+ const n=norm(partial);if(!n)return [];
+ const a=norm(artist),canonical=SOLO_ARTIST_ALIASES[a]||artist;
+ const seen=new Set(),results=[];
+ const add=(title,source)=>{if(!title)return;const k=norm(title);if(!k.includes(n)||seen.has(k))return;seen.add(k);results.push({title,source})};
+ for(const x of soloRecentSongs[a]||[])add(x,'我的历史推荐');
+ for(const x of [...DB,...customs])if(norm(x.name)===a)add(x.track,'本地记录');
+ for(const [name,titles] of Object.entries(SOLO_LOCAL_MORE))if(norm(name)===a||norm(name)===norm(canonical))for(const x of titles)add(x,'离线补全');
+ for(const h of profile.history||[])for(const r of h.rounds||[])if(norm(r.name)===a)add(r.rec,'曾经推荐');
+ // Prefer typed-prefix matches over substring matches, keeping active recall meaningful.
+ return results.sort((x,y)=>(norm(y.title).startsWith(n)?1:0)-(norm(x.title).startsWith(n)?1:0)).slice(0,8);
+}
+function mountSoloAutocomplete(field){
+ const input=root.querySelector('#'+field);if(!input)return;
+ input.insertAdjacentHTML('afterend',`<div class="solo-song-help">先回忆歌名或专辑名，输入片段后才出现联想。</div><div class="solo-track-suggest" id="soloTrackResults"></div><div class="solo-track-status" id="soloTrackStatus" aria-live="polite"></div>`);
+ // If validation re-rendered, preserve the typed value. Don't show unsolicited answers.
+ if(input.value.trim())showSoloSongLocal(field,input.value.trim());
+}
+function setSoloSongStatus(message){const e=root.querySelector('#soloTrackStatus');if(e)e.textContent=message}
+function showSoloSongMatches(field,results){
+ if(S.view!==(field==='rec'?'compose':'incomingProof'))return;
+ const e=root.querySelector('#soloTrackResults');if(!e)return;
+ soloCurrentSongResults=results;
+ e.innerHTML=results.slice(0,7).map((r,i)=>`<button type="button" class="suggestion" data-solo-song="${i}" data-solo-field="${field}"><strong>${esc(r.title)}</strong><small>${esc(r.source)}</small></button>`).join('');
+}
+function showSoloSongLocal(field,value){
+ const ctx=songContext(field),results=localSongMatches(ctx.artist,value);
+ showSoloSongMatches(field,results);
+ if(norm(value).length>=2)setSoloSongStatus(results.length?'本地联想已显示，正在继续搜索在线目录…':'正在查询在线目录（网络较慢时可直接填写）…');
+ return results;
+}
+function makeLuceneSongQuery(term,artist,mbid,kind='recording'){
+ // MusicBrainz uses Lucene: song/album search must include the artist,
+ // otherwise unrelated records would be incorrectly suggested.
+ const clean=v=>String(v).replace(/[^\p{L}\p{N}\s]/gu,' ').trim().slice(0,75);
+ const words=clean(term).split(/\s+/).filter(Boolean).slice(0,4);
+ const name=clean(artist);if(!words.length||!name)return '';
+ const field=kind==='recording'?'recording':'releasegroup';
+ const titleQuery=words.map(w=>`${field}:${w}*`).join(' AND ');
+ const artistQuery=mbid&&/^[0-9a-f-]{36}$/i.test(mbid)?`arid:${mbid}`:`artistname:"${name}"`;
+ return titleQuery+' AND '+artistQuery;
+}
+// Use a small offline index immediately, then asynchronously enrich suggestions.
+// No unsolicited popular-song list; the user must recall part of the title first.
+let soloSearchQueue=Promise.resolve();
+function musicBrainzPermit(){
+ const job=soloSearchQueue.catch(()=>{}).then(async()=>{
+  const wait=Math.max(0,1120-(Date.now()-lastNetworkCall));
+  if(wait)await new Promise(r=>setTimeout(r,wait));
+  lastNetworkCall=Date.now();
+ });
+ soloSearchQueue=job.catch(()=>{});return job;
+}
+async function musicBrainzSongFetch(kind,field,term,ctx,ctrl,token){
+ const query=makeLuceneSongQuery(term,ctx.artist,ctx.mbid,kind);
+ if(!query)return [];
+ await musicBrainzPermit();if(token!==soloSongSeq||ctrl.signal.aborted)return [];
+ const endpoint=kind==='recording'?'recording':'release-group';
+ const url=`https://musicbrainz.org/ws/2/${endpoint}/?query=${encodeURIComponent(query)}&fmt=json&limit=15`;
+ const response=await fetch(url,{signal:ctrl.signal,headers:{Accept:'application/json'}});
+ if(!response.ok)throw Error('HTTP '+response.status);
+ const data=await response.json();
+ const entries=kind==='recording'?data.recordings:data['release-groups'];
+ const seen=new Set();return(entries||[]).map(v=>({title:v.title,source:kind==='recording'?'曲目 · MusicBrainz':'专辑 · MusicBrainz'})).filter(x=>{
+  const k=norm(x.title);if(!k||seen.has(k))return false;seen.add(k);return true
+ }).slice(0,8);
+}
+async function searchSoloSong(field,query,token){
+ const ctx=songContext(field),key=norm(ctx.artist)+'|'+norm(query);
+ const local=localSongMatches(ctx.artist,query);
+ if(soloSongCache.has(key)){
+  if(token===soloSongSeq){const saved=soloSongCache.get(key);showSoloSongMatches(field,[...local,...saved.filter(x=>!local.some(y=>norm(y.title)===norm(x.title)))].slice(0,8));setSoloSongStatus('已显示缓存结果；也可以直接填写。')}
+  return;
+ }
+ if(!ctx.artist){setSoloSongStatus('请先确定音乐人，再查找作品名。');return}
+ const ctrl=new AbortController();soloSongController=ctrl;
+ const abort=setTimeout(()=>ctrl.abort(),5600);
+ const uniq=xs=>{const seen=new Set();return xs.filter(x=>{const k=norm(x.title);if(!k||seen.has(k))return false;seen.add(k);return true})};
+ let got=[];
+ try{
+  got=await musicBrainzSongFetch('recording',field,query,ctx,ctrl,token);
+  if(token!==soloSongSeq)return;
+  const first=uniq([...local,...got]).slice(0,8);showSoloSongMatches(field,first);
+  if(got.length){setSoloSongStatus('已找到在线曲目。也可以继续输入自己的作品。')}
+  // Album fallback is only triggered when there are few title matches.
+  if(got.length<3 && !ctrl.signal.aborted){
+   const album=await musicBrainzSongFetch('release-group',field,query,ctx,ctrl,token);
+   if(token!==soloSongSeq)return;
+   got=uniq([...got,...album]);showSoloSongMatches(field,uniq([...local,...got]).slice(0,8));
+  }
+  soloSongCache.set(key,got);
+  if(token===soloSongSeq)setSoloSongStatus(got.length?'在线联想已更新，可选择歌曲或专辑。':'目录没有找到匹配的作品，可直接填写。');
+ }catch(e){
+  if(token===soloSongSeq){
+   showSoloSongMatches(field,local);
+   setSoloSongStatus('在线目录未连通或响应超时；已显示本地可用结果，仍可直接填写。');
+  }
+ }finally{clearTimeout(abort);if(soloSongController===ctrl)soloSongController=null}
+}
+root.addEventListener('input',ev=>{
+ const f=ev.target.id;
+ if(f!=='rec'&&f!=='heardProof')return;
+ clearTimeout(soloSongDebounce);++soloSongSeq;
+ if(soloSongController){soloSongController.abort();soloSongController=null}
+ const q=ev.target.value.trim(),token=soloSongSeq;
+ if(!q){showSoloSongMatches(f,[]);setSoloSongStatus('');return}
+ showSoloSongLocal(f,q);
+ if(norm(q).length<2){setSoloSongStatus('再输入一点歌名，联想才会出现。');return}
+ if(!songContext(f).artist){setSoloSongStatus('先输入音乐人，再补全作品名。');return}
+ soloSongDebounce=setTimeout(()=>searchSoloSong(f,q,token),320);
+});
+root.addEventListener('click',ev=>{
+ const btn=ev.target.closest('[data-solo-song]');if(!btn)return;
+ const field=btn.dataset.soloField;
+ const res=soloCurrentSongResults[Number(btn.dataset.soloSong)];if(!res)return;
+ if(field==='rec')S.nomDraft.track=res.title;
+ else if(field==='heardProof')S.incomingProof=res.title;
+ const input=root.querySelector('#'+field);if(input)input.value=res.title;
+ ++soloSongSeq;clearTimeout(soloSongDebounce);
+ if(soloSongController){soloSongController.abort();soloSongController=null}
+ showSoloSongMatches(field,[]);setSoloSongStatus('已补全作品名，可以提交。');
+});
+
+// Only store user-confirmed titles in this browser, not in the public chat.
+const submitSoloProofOriginal=submitProof;
+submitProof=function(){const artist=S.incoming?.name,track=S.incomingProof;submitSoloProofOriginal();if(S.view==='incomingReply')rememberSoloSong(artist,track)};
+const submitSoloNomOriginal=submitNom;
+submitNom=function(){const artist=S.nomDraft.artist,track=S.nomDraft.track;submitSoloNomOriginal();if(S.view==='reveal')rememberSoloSong(artist,track)};
+
+
+// === v1.2 / Artist nominations + optional friendly response (no battle scoring changes) ===
+const LOCAL_NOM_CACHE='niche_local_nominations_v12';
+const tastedReplies=['眼光不错诶，握手 (´▽｀)ﾉ','好耶，这首居然也有同好。','这首真挺好的，收下夸奖（笑）。','噢！居然对上了这首，开心。'];
+function localArtistIndex(){
+ const groups=new Map();
+ for(const h of profile.history||[]){
+  for(const r of h.rounds||[]){if(!r.name)continue;const k=norm(r.name);const item=groups.get(k)||{name:r.name,mentions:0};item.mentions++;groups.set(k,item)}
+ }
+ return [...groups.values()].sort((a,b)=>b.mentions-a.mentions||a.name.localeCompare(b.name,'zh-CN'));
+}
+let idxMode='all';let idxQuery='',idxDebounce=null,idxTicket=0,idxGenre='all';
+const artistIndexSearch=(name,genre='')=>'/api/artist-nominations?name='+encodeURIComponent(name)+(genre?'&genre='+encodeURIComponent(genre):'');
+function artistIndex(){
+ stopTimer();stopPolling();clearSoloClock();idxMode='artistIndex';
+ const local=localArtistIndex();
+ shell(`<div class="eyebrow">ARTIST NOMINATIONS</div><h2 class="h2">谁被提起最多？</h2><p class="lead">提名次数是站内讨论热度，不是小众战斗力。</p><div class="form-row"><label for="idxQuery">查一个音乐人</label><input class="field" id="idxQuery" autocomplete="off" value="${esc(idxQuery)}" placeholder="输入音乐人名称…"/><div id="indexLookup" class="index-result"></div></div><div class="section">真人联网提名榜 <span class="tag">已完成的真人对局</span></div><div class="form-row"><select class="field" id="idxGenre"><option value="all">全部流派</option>${GENRES.map(([n,g])=>`<option value="${esc(g)}" ${idxGenre===g?'selected':''}>${esc(n)}</option>`).join('')}</select></div><div id="onlineArtistIndex" class="index-list">${apiBase()?'读取中…':'未连接服务器，暂时没有站内统计。'}</div><div class="section">本机练习提名 <span class="tag">仅你自己的浏览器</span></div><div class="index-list">${local.length?local.slice(0,12).map((x,i)=>`<div class="index-line"><span>${i+1}. ${esc(x.name)}</span><strong>${x.mentions} 次</strong></div>`).join(''):'还没有本机提名记录。'}</div><div class="space"></div>${button('返回首页','home','ghost block')}`);
+ if(idxQuery.trim())lookupIndex(idxQuery);
+ if(apiBase())loadOnlineIndex();
+}
+async function loadOnlineIndex(){
+ const element=root.querySelector('#onlineArtistIndex');if(!element)return;
+ try{
+  const response=await api('/api/artist-nominations/top'+(idxGenre==='all'?'':'?genre='+encodeURIComponent(idxGenre)));
+  if(idxMode!=='artistIndex'||!root.querySelector('#onlineArtistIndex'))return;
+  element.innerHTML=(response.entries||[]).length?response.entries.map((x,i)=>`<div class="index-line"><div><strong>${i+1}. ${esc(x.name)}</strong><div class="small">${esc(genreName(x.genre||idxGenre||''))} · ${x.uniqueNominators} 位提名者</div></div><strong>${x.nominations} 次</strong></div>`).join(''):'目前没有可计入站内指数的提名。';
+ }catch(error){element.textContent='联网统计暂时不可用：'+String(error.message)}
+}
+function lookupIndex(name){
+ const seq=++idxTicket;const e=root.querySelector('#indexLookup');if(!e)return;
+ const local=localArtistIndex().find(x=>norm(x.name)===norm(name));
+ e.innerHTML=`<div class="small">本机练习提名：${local?.mentions||0} 次 · ${apiBase()?'正在查询全站…':'全站需连接 Worker 才能查询'}</div>`;
+ if(!apiBase()||!name.trim())return;
+ api(artistIndexSearch(name,idxGenre==='all'?'':idxGenre)).then(x=>{
+  if(seq!==idxTicket||!root.querySelector('#indexLookup'))return;
+  e.innerHTML=`<div class="stat-quiet">站内被提名 <strong>${x.nominations||0}</strong> 次 · <strong>${x.uniqueNominators||0}</strong> 位独立提名者</div><div class="small">本机练习：${local?.mentions||0} 次 · 不计入站内数值</div>`;
+ }).catch(()=>{if(seq===idxTicket)e.textContent=`本机练习：${local?.mentions||0} 次 · 全站统计连接失败`});
+}
+function showArtistNominationStats(){
+ const area=root.querySelector('#suggestArea'),name=S.nomDraft.artist.trim();if(!area||!name||S.view!=='compose')return;
+ let el=root.querySelector('#nominationCount');
+ if(!el){el=document.createElement('div');el.id='nominationCount';el.className='mini-meta';area.insertAdjacentElement('afterend',el)}
+ const chosen=S.nomDraft.picked,local=localArtistIndex().find(x=>norm(x.name)===norm(name));
+ el.textContent=`本机提名 ${local?.mentions||0} 次 · ${apiBase()?'查询站内提名中…':'站内指数需联网'}`;
+ if(!apiBase()||!chosen)return;
+ const token=name;
+ api(artistIndexSearch(name,idxGenre==='all'?'':idxGenre)).then(x=>{
+  if(S.view!=='compose'||S.nomDraft.artist!==token)return;
+  const node=root.querySelector('#nominationCount');if(node)node.textContent=`站内被提名 ${x.nominations||0} 次 · ${x.uniqueNominators||0} 位提名者（不影响战力）`;
+ }).catch(()=>{const node=root.querySelector('#nominationCount');if(node)node.textContent=`本机提名 ${local?.mentions||0} 次 · 站内查询失败`});
+}
+const prevV12Home=renderHome;
+renderHome=function(){idxMode='all';prevV12Home();root.querySelector('.rank-box')?.insertAdjacentHTML('afterend',`<div class="index-entry"><div><strong>站内艺人提名指数</strong><div class="small">查看哪些音乐人最常被提起</div></div>${button('查看 →','artistIndex','outline')}</div>`)};
+const prevV12Compose=renderCompose;
+renderCompose=function(){prevV12Compose();showArtistNominationStats()};
+const prevV12Pick=pickSuggestion;
+pickSuggestion=function(src,i){prevV12Pick(src,i);showArtistNominationStats()};
+const prevV12Create=createArtist;
+createArtist=function(){prevV12Create();showArtistNominationStats()};
+const prevV12NextIncoming=nextIncoming;
+nextIncoming=function(){S.incomingTaste=false;prevV12NextIncoming()};
+const prevV12IncomingReply=renderIncomingReply;
+renderIncomingReply=function(){
+ prevV12IncomingReply();
+ const c=root.querySelector('.chat');if(!c||!S.incoming?.track)return;
+ const card=`<div class="taste-share"><div class="small">${S.incomingHeard?'顺便交换一下心头好':'TA 刚才安利的作品'}</div><strong>${esc(S.incoming.name)} · 《${esc(S.incoming.track)}》</strong><div class="small" style="margin-top:7px">${S.incomingHeard?'这不是继续考你，只是给你看看 TA 喜欢哪首。':'这首你如果也听过、而且喜欢，可以给 TA 一个回应。'}</div><button type="button" data-act="tasteGood" class="btn taste-button" ${S.incomingTaste?'disabled':''}>${S.incomingTaste?'已送出「有品！」':'这首我也喜欢 · 有品！'}</button></div>`;
+ c.insertAdjacentHTML('afterend',card);
+ if(S.incomingTaste){c.insertAdjacentHTML('beforeend',talk('你','有品！这首我也喜欢 (´▽｀)','me',true))}
+};
+const prevV12Score=scoreRound;
+scoreRound=function(){const r=prevV12Score();r.tasteGood=!!S.incomingTaste;return r};
+const prevV12RoundResult=renderRoundResult;
+renderRoundResult=function(){prevV12RoundResult();if(S.results.at(-1)?.tasteGood)root.querySelector('.status')?.insertAdjacentHTML('beforeend',`<div class="taste-sent">✓ 已送出「有品！」· 不影响本轮胜负</div>`)};
+const prevV12Final=renderFinal;
+renderFinal=function(){prevV12Final();const praises=S.results.filter(x=>x.tasteGood).length;if(praises)root.querySelector('.final-rank')?.insertAdjacentHTML('afterend',`<div class="taste-sent">这局你给了 ${praises} 次「有品！」</div>`)};
+// In same-screen play, an already-submitted song is shared after its recipient answers.
+seatHistory=function(){return seat.history.map((x,i)=>({...x,i})).filter(x=>x.round===seat.round).map(x=>`<div class="history-row"><strong>${x.who==='a'?'A':'B'}：${esc(x.name)}</strong> · ${x.timeout?'超时':x.heard===true?'听过':x.heard===false?'没听过':'未回应'}${x.track?`<div class="small">本轮曲目：《${esc(x.track)}》</div>${x.taste?'<div class="taste-sent">有品！已送达</div>':`<button type="button" class="mini-taste" data-seat-taste="${x.i}">这首也喜欢 · 有品！</button>`}`:''}</div>`).join('')};
+const prevV12Seat=renderSeat;
+renderSeat=function(){prevV12Seat();if(seat.phase==='done')root.querySelector('.main')?.insertAdjacentHTML('beforeend',`<div class="section">本局推荐</div>${seat.history.map((x,i)=>x.track?`<div class="index-line"><span>${esc(x.who.toUpperCase())} · ${esc(x.name)}《${esc(x.track)}》</span>${x.taste?'有品！':`<button class="mini-taste" data-seat-taste="${i}">有品！</button>`}</div>`:'').join('')}`)};
+roomExchanges=function(s){return(s.exchanges||[]).map((x,i)=>({x,i})).filter(v=>v.x.round===s.round).map(({x,i})=>`<div class="history-row"><strong>${x.role==='host'?'房主':'朋友'}</strong>：${esc(x.name)} · ${x.timeout?'超时':x.heard===true?'听过':x.heard===false?'没听过':'未回应'}${x.track?`<div class="small">本局曲目《${esc(x.track)}》</div>${x.tasteBy?.[live.room?.role]?'<div class="taste-sent">你已送出「有品！」</div>':x.tasteBy&&Object.values(x.tasteBy).some(Boolean)?'<div class="taste-sent">收到「有品！」</div>':x.role!==live.room?.role&&!s.completed?`<button type="button" class="mini-taste" data-room-taste="${i}">这首也喜欢 · 有品！</button>`:''}`:''}</div>`).join('')};
+const prevV12Room=renderRoom;
+renderRoom=function(){prevV12Room();if(live.mode!=='room')return;
+ const s=live.room?.state;if(!s)return;
+ if(s.phase==='done')root.querySelector('main')?.insertAdjacentHTML('beforeend',`<div class="section">双方推荐</div>${(s.exchanges||[]).filter(x=>x.track).map(x=>`<div class="index-line"><span>${esc(x.name)} · 《${esc(x.track)}》</span><span class="small">${x.tasteBy&&Object.values(x.tasteBy).some(Boolean)?'有品！':''}</span></div>`).join('')}`);
+};
+async function sendRoomTaste(i){if(live.busy||!live.room)return;live.busy=true;try{const x=await api('/api/rooms/'+live.room.code+'/actions','POST',{type:'taste',exchangeIndex:i});live.room=x.room;live.sig=JSON.stringify(x.room.state);renderRoom()}catch(err){live.err=String(err.message);renderRoom()}finally{live.busy=false}}
+root.addEventListener('change',event=>{if(event.target.id==='idxGenre'){idxGenre=event.target.value;artistIndex()}});
+root.addEventListener('input',event=>{if(event.target.id==='idxQuery'){idxQuery=event.target.value;clearTimeout(idxDebounce);idxDebounce=setTimeout(()=>lookupIndex(idxQuery),350)}});
+root.addEventListener('click',event=>{
+ const act=event.target.closest('[data-act]')?.dataset.act;
+ if(act==='artistIndex'){artistIndex();return}
+ if(act==='tasteGood'&&S.view==='incomingReply'&&!S.incomingTaste){S.incomingTaste=true;renderIncomingReply();const card=root.querySelector('.taste-share');if(card)card.insertAdjacentHTML('beforeend',`<div class="taste-sent">${esc(tastedReplies[Math.floor(Math.random()*tastedReplies.length)])}</div>`);return}
+ const seatButton=event.target.closest('[data-seat-taste]');if(seatButton){let i=Number(seatButton.dataset.seatTaste);if(seat.history[i]){seat.history[i].taste=true;renderSeat()}return}
+ const roomButton=event.target.closest('[data-room-taste]');if(roomButton){sendRoomTaste(Number(roomButton.dataset.roomTaste));return}
+});
+
+renderHome();
+})();
+</script>
+</body>
+</html>
